@@ -5,9 +5,9 @@ return array(
         'environment' => 'local' ),
 
     'paths' => array(
-        'baseUri' => 'http://boo.dev/',
-        'assetUri' => 'http://boo.dev/',
-        'hostname' => 'boo.dev' ),
+        'baseUri' => 'http://geist.dev/',
+        'assetUri' => 'http://geist.dev/',
+        'hostname' => 'geist.dev' ),
 
     'cookies' => array(
         'secure' => TRUE ),
