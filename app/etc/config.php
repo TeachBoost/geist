@@ -5,10 +5,10 @@ return array(
         'environment' => 'local',
         'errorReporting' => TRUE,
         // can be 'api' or 'view'
-        'responseMode' => 'api',
+        'responseMode' => 'view',
         // router namespace modules
         'modules' => array(
-            'api' => 'Api' )),
+            'admin' => 'Admin' )),
 
     'paths' => array(
         'baseUri' => 'http://phalcon.dev/',
@@ -18,7 +18,7 @@ return array(
     'session' => array(
         // can be 'redis' or 'files'
         'adapter' => 'files',
-        'name' => 'phalcon',
+        'name' => 'blog',
         'lifetime' => 1440,
         'cookieLifetime' => 86400 ),
 
@@ -51,7 +51,7 @@ return array(
         'host' => 'localhost',
         'username' => 'root',
         'password' => '',
-        'dbname' => 'phalcon',
+        'dbname' => 'blog',
         'persistent' => TRUE ),
 
     'mongodb' => array(
@@ -59,7 +59,7 @@ return array(
         'port' => 27017,
         'username' => '',
         'password' => '',
-        'dbname' => 'phalcon' ),
+        'dbname' => 'blog' ),
 
     'profiling' => array(
         'system' => TRUE,

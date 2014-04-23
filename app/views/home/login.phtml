@@ -1,0 +1,19 @@
+<div id="auth" class="page">
+    <fieldset>
+        <legend>
+            <h2>Log in</h2>
+        </legend>
+        <form method="post" action="<?php echo $this->url->get( 'auth/login' ); ?>">
+            <div class="margin-bottom-15">
+                <label>Email address</label>
+                <input class="w250px" type="text" name="email" value="" />
+            </div>
+            <div class="margin-bottom-25">
+                <label>Password</label>
+                <input class="w250px" type="password" name="password" value="" />
+            </div>
+            <input class="blue button margin-right-10 fontsize-18" type="submit" value="Log in" />
+            <a href="<?php echo $this->url->get( '' ); ?>" class="fontsize-15">Cancel</a>
+        </form>
+    </fieldset>
+</div>

@@ -1,0 +1,69 @@
+/* Base
+ */
+body.admin {
+    padding-top: 64px; }
+a {
+    color: #6905cd; }
+#admin.page {
+    width: auto; margin: auto; padding: 50px 25px 25px;
+    max-width: 1400px; }
+
+/* Header
+ */
+#admin-header {
+    background: #e9e9e9; position: fixed; width: 100%; height: 65px;
+    top: 0; border-bottom: 1px solid #d9d9d9; z-index: 1; }
+#admin-header header {
+    width: auto; margin: 0 auto; padding: 12px 25px; height: auto;
+    line-height: 40px; max-width: 1400px; }
+#admin-header header .title {
+    font-size: 22px; }
+#admin-header header .title span {
+    color: #aaa; margin: 0 15px; }
+
+/* Heading Nav
+ */
+h2.with-nav {
+    border-bottom: 1px solid #ddd; padding-bottom: 6px; }
+h2.with-nav span {
+    padding: 10px 16px 8px; margin-right: 20px; border: 1px solid #ddd;
+    border-radius: 4px 4px 0 0; border-bottom: 0; line-height: 1px;
+    background: #fff; }
+h2.with-nav a {
+    font-weight: normal; text-decoration: none; margin-right: 20px; }
+h2.with-nav a:hover {
+    text-decoration: underline; }
+
+
+/* Messages
+ */
+#admin-messages {
+    margin: 25px auto 0; max-width: 1400px; padding: 0 25px; }
+#admin-messages .message {
+    margin-bottom: 10px; padding: 10px; color: #fff;
+    border-radius: 3px; }
+#admin-messages .message.success {
+    background: #2ba02b; }
+#admin-messages .message.error {
+    background: #af362b; }
+#admin-messages .message.warning {
+    background: #d6a70e; }
+#admin-messages .message.info {
+    background: #007db6; }
+
+/* Edit article
+ */
+.left-col {
+    width: 65%; padding-right: 5%; }
+.right-col {
+    width: 30%; }
+
+/* Footer
+ */
+#admin-footer {
+    height: 80px; }
+
+/* Delete wrapper
+ */
+#delete-wrapper {
+    position: relative; top: 50px; }

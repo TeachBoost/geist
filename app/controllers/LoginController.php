@@ -13,6 +13,6 @@ class LoginController extends \Base\Controller
 
     public function indexAction()
     {
-        $this->view->pick( 'main/login' );
+        $this->view->pick( 'home/login' );
     }
 }

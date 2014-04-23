@@ -20,9 +20,9 @@ try
     $bootstrap = new \Lib\Bootstrap\App(
         array(
             'router', 'url', 'cookies', 'session',
-            'profiler', 'db', 'mongo', 'collectionManager',
-            'dataCache', 'view', 'dispatcher', 'util', 'auth',
-            'validate', 'cache'
+            'profiler', 'db', 'collectionManager',
+            'dataCache', 'view', 'dispatcher', 'util',
+            'auth', 'validate'
         ));
     $bootstrap->run();
 }

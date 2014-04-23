@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Admin -- TeachBoost Blog</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Style Sheets -->
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="<?php echo $this->url->get( 'css/app.css' ); ?>">
+    </head>
+    <body class="admin">
+        <!-- Content -->
+        <div id="content">
+<?php   $this->partial( 'partials/admin/header' );
+        echo $this->getContent();
+        $this->partial( 'partials/admin/footer' ); ?>
+        </div>
+
+        <!-- JavaScripts -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="<?php echo $this->url->get( 'js/underscore.js' ); ?>"></script>
+        <script src="<?php echo $this->url->get( 'js/pikaday.js' ); ?>"></script>
+        <script src="<?php echo $this->url->get( 'js/jquery.pikaday.js' ); ?>"></script>
+        <script src="<?php echo $this->url->get( 'js/jquery.timepicker.js' ); ?>"></script>
+        <script src="<?php echo $this->url->get( 'js/admin.js' ); ?>"></script>
+    </body>
+</html>

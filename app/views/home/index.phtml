@@ -1,0 +1,34 @@
+
+<header class="site-head">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <a class="blog-logo" href="<?php echo $this->url->get( '' ); ?>">
+                <img src="<?php echo $this->url->get( 'img/mark.png' ); ?>" alt="Blog Logo" />
+            </a>
+            <h1 class="blog-title">Blog Title</h1>
+            <h2 class="blog-description">Blog Description</h2>
+        </div>
+    </div>
+</header>
+
+<main class="content" role="main">
+
+<?php   foreach ( $posts as $post ): ?>
+
+    <article class="">
+        <header class="post-header">
+            <span class="post-meta">
+                <time datetime="">{{date format="MMMM D, YYYY"}}</time>
+            </span>
+            <h2 class="post-title">
+                <a href="#">Post Title</a>
+            </h2>
+        </header>
+        <section class="post-excerpt">
+            <p>{{excerpt}}&hellip; <a class="read-more" href="#">&raquo;</a></p>
+        </section>
+    </article>
+
+<?php   endforeach; ?>
+
+</main>

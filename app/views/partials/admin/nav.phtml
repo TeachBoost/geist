@@ -1,0 +1,21 @@
+<h2 class="with-nav">
+<?php   if ( $adminNavPage == 'articles' ): ?>
+    <span>Articles</span>
+<?php   else: ?>
+    <a href="<?php echo $this->url->get( 'admin/articles' ); ?>">Articles</a>
+<?php   endif;
+        if ( $this->auth->user[ 'access_users' ] ):
+            if ( $adminNavPage == 'users' ): ?>
+    <span>Users</span>
+<?php       else: ?>
+    <a href="<?php echo $this->url->get( 'admin/users' ); ?>">Users</a>
+<?php       endif;
+        endif;
+        if ( $this->auth->user[ 'access_members' ] ):
+            if ( $adminNavPage == 'members' ): ?>
+    <span>Members</span>
+<?php       else: ?>
+    <a href="<?php echo $this->url->get( 'admin/members' ); ?>">Members</a>
+<?php       endif;
+        endif; ?>
+</h2>

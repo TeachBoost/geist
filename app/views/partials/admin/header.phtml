@@ -1,0 +1,45 @@
+<!-- Header -->
+<div id="admin-header">
+    <header class="clearfix">
+        <div class="float-left title">
+            Barn Admin<?php echo ( isset( $subPage ) ) ? '<span>&raquo;</span>'. $subPage : ''; ?>
+        </div>
+        <div class="float-right">
+            <a class="gray button fontsize-18" href="<?php echo $this->url->get( $backPage ); ?>">
+                <i class="fa fa-long-arrow-left"></i>
+                Back
+            </a>
+<?php   if ( isset( $buttons ) ):
+            foreach ( $buttons as $button ):
+                if ( $button == 'newArticle' ): ?>
+            <a class="blue button fontsize-18 margin-left-10" href="<?php echo $this->url->get( 'admin/articles/new' ); ?>">New Article</a>
+<?php           endif;
+                if ( $button == 'saveArticle' ): ?>
+            <a class="green button fontsize-18 margin-left-10" href="javascript:;" id="save-object">Save Article</a>
+<?php           endif;
+                if ( $button == 'newUser' ): ?>
+            <a class="blue button fontsize-18 margin-left-10" href="<?php echo $this->url->get( 'admin/users/new' ); ?>">New User</a>
+<?php           endif;
+                if ( $button == 'saveUser' ): ?>
+            <a class="green button fontsize-18 margin-left-10" href="javascript:;" id="save-object">Save User</a>
+<?php           endif;
+                if ( $button == 'newMember' ): ?>
+            <a class="blue button fontsize-18 margin-left-10" href="<?php echo $this->url->get( 'admin/members/new' ); ?>">New Member</a>
+<?php           endif;
+                if ( $button == 'saveMember' ): ?>
+            <a class="green button fontsize-18 margin-left-10" href="javascript:;" id="save-object">Save Member</a>
+<?php           endif;
+            endforeach;
+        endif; ?>
+        </div>
+    </header>
+</div>
+
+<!-- Messages -->
+<?php   if ( $flashMessages ): ?>
+<div id="admin-messages">
+<?php       foreach ( $flashMessages as $message ): ?>
+    <div class="message <?php echo key( $message ); ?>"><?php echo current( $message ); ?></div>
+<?php       endforeach; ?>
+</div>
+<?php   endif; ?>

@@ -1,19 +1,18 @@
 <?php
 
-namespace Controllers;
+namespace Controllers\Admin;
 
 class IndexController extends \Base\Controller
 {
     public function beforeExecuteRoute()
     {
-        $this->checkLoggedIn = FALSE;
+        $this->checkLoggedIn = TRUE;
 
         return parent::beforeExecuteRoute();
     }
 
     public function indexAction()
     {
-        $this->view->posts = array();
-        $this->view->pick( 'home/index' );
+        $this->redirect = "admin/articles";
     }
 }

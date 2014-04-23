@@ -2,7 +2,7 @@
 
 return array(
     'app' => array(
-        'environment' => 'development' ),
+        'environment' => 'production' ),
 
     'paths' => array(
         'baseUri' => 'http://phalcon.com/',

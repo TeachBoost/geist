@@ -1,20 +1,39 @@
 <!DOCTYPE html>
-<html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Phalcon Boilerplate</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="<?php echo $this->url->get( 'css/app.css' ); ?>">
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    </head>
-    <body>
-        <div id="content">
-<?php   foreach ( $flashMessages as $message ): ?>
-            <div class="message <?php echo key( $message ); ?>"><?php echo current( $message ); ?></div>
-<?php   endforeach; ?>
-            <?php echo $this->getContent() ?>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>TeachBoost Blog</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->url->get( 'css/app.css' ); ?>">
+    <link href='http://fonts.googleapis.com/css?family=Signika:400,700' 
+        rel='stylesheet' type='text/css'>
+</head>
+<body class="">
+
+    <?php echo $this->getContent() ?>
+
+    <footer class="site-footer">
+        <a class="subscribe icon-feed" href="<?php echo $this->url->get( 'rss' ); ?>">
+            <span class="tooltip">Subscribe!</span>
+        </a>
+        <div class="inner">
+            <section class="copyright">
+                All content copyright
+                <a href="<?php echo $this->url->get( '' ); ?>">TeachBoost</a>
+                &copy; <?php echo date( 'Y' ); ?> &bull; All rights reserved.
+            </section>
         </div>
-    </body>
+    </footer>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo $this->url->get( 'js/main.js' ); ?>"></script>
+
+</body>
 </html>
