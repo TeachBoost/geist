@@ -1,0 +1,11 @@
+{
+    "name" : "Geist",
+    "private" : true,
+    "dependencies" : {
+        "jquery" : "*",
+        "fontawesome" : "*",
+        "jquery.scrollTo" : "*",
+        "pikaday" : "*",
+        "underscore" : "*"
+    }
+}

@@ -22,7 +22,7 @@ class AuthController extends \Base\Controller
 
         // try to log in with credentials
         //
-        $this->redirect = 'dashboard';
+        $this->redirect = 'admin';
         $action = new \Actions\Users\Auth();
         $loggedIn = $action->login(
             array(
