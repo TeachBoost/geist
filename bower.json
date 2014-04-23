@@ -6,6 +6,7 @@
         "fontawesome" : "*",
         "jquery.scrollTo" : "*",
         "pikaday" : "*",
-        "underscore" : "*"
+        "underscore" : "*",
+        "markdown" : "*"
     }
 }

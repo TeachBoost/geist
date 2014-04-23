@@ -1,0 +1,39 @@
+<div id="admin" class="page">
+    <!-- Users table -->
+<?php   $this->partial(
+            'partials/admin/nav',
+            [ 'adminNavPage' => 'users' ]); ?>
+    <table id="users" cellspacing="0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th class="lefted-text">Name</th>
+                <th class="lefted-text">Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+<?php   if ( count( $users ) ):
+            foreach ( $users as $user ): ?>
+
+            <tr>
+                <td class="centered-text"><?php echo $user->id; ?></td>
+                <td><?php echo $user->name; ?></td>
+                <td><?php echo $user->email; ?></td>
+                <td class="centered-text">
+                    <a href="<?php echo $this->url->get( 'admin/users/edit/'. $user->id ); ?>">Edit</a>
+                </td>
+            </tr>
+
+<?php       endforeach;
+        else: ?>
+
+            <tr>
+                <td colspan="7" class="centered-text">There are no users</td>
+            </tr>
+
+<?php   endif; ?>
+
+        </tbody>
+    </table>
+</div>

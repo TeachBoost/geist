@@ -42,6 +42,27 @@ var AdminPage = {
 
             var timeoutId = window.setTimeout( revert, 3000 );
         });
+    },
+
+    // live preview for the markdown editor
+    //
+    markdownEditor: function () {
+        var $editor = $( '#markdown-editor' ),
+            $preview = $( '#markdown-preview' );
+
+        if ( ! $editor.length ) {
+            return;
+        }
+
+        function Editor( input, preview ) {
+            this.update = function () {
+                preview.innerHTML = markdown.toHTML( input.value );
+            };
+            input.editor = this;
+            this.update();
+        };
+
+        new Editor( $editor[ 0 ], $preview[ 0 ] );
     }
 
 };
@@ -51,5 +72,6 @@ var AdminPage = {
 AdminPage.datepickers();
 AdminPage.timepickers();
 AdminPage.postActions();
+AdminPage.markdownEditor();
 
 });

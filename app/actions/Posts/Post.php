@@ -60,31 +60,12 @@ class Post extends \Base\Action
         //
         $post->title = $filter->sanitize( get( $data, 'title' ), 'striptags' );
         $post->body = $filter->sanitize( get( $data, 'body' ), 'striptags' );
-        $post->location = $filter->sanitize( get( $data, 'location' ), 'striptags' );
-        $post->external_url = $filter->sanitize( get( $data, 'external_url' ), 'striptags' );
         $post->excerpt = $filter->sanitize( get( $data, 'excerpt' ), 'striptags' );
+        $post->category_id = $filter->sanitize( get( $data, 'category' ), 'striptags' );
+        $post->user_id = $filter->sanitize( get( $data, 'user_id' ), 'striptags' );
         $post->post_date = date_str(
             get( $data, 'post_date' ),
             DATE_DATABASE,
-            TRUE );
-        $post->event_date = date_str(
-            get( $data, 'event_date' ),
-            DATE_DATABASE,
-            TRUE );
-        $post->event_date_end = date_str(
-            get( $data, 'event_date_end' ),
-            DATE_DATABASE,
-            TRUE );
-
-        // save the times if they came in
-        //
-        $post->event_time = date_str(
-            get( $data, 'event_time' ),
-            DATE_TIME_DATABASE,
-            TRUE );
-        $post->event_time_end = date_str(
-            get( $data, 'event_time_end' ),
-            DATE_TIME_DATABASE,
             TRUE );
 
         // set up status filter
@@ -97,19 +78,6 @@ class Post extends \Base\Action
                     : 'draft';
             });
         $post->status = $filter->sanitize( get( $data, 'status' ), 'status' );
-
-        // set up homepage loc filter
-        //
-        $filter->add(
-            'homepageLocation',
-            function ( $value ) {
-                return ( in_array( $value, [ 'hero', 'boxes' ] ) )
-                    ? $value
-                    : NULL;
-            });
-        $post->homepage_location = $filter->sanitize(
-            get( $data, 'homepage_location' ),
-            'homepageLocation' );
 
         // set the slug if there isn't one
         //

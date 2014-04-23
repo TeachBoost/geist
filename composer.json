@@ -1,11 +1,12 @@
 {
-    "name" : "mikegioia/phalcon-boilerplate",
-    "description" : "Phalcon Boilerplate",
+    "name" : "teachboost/geist",
+    "description" : "Blogging platform",
     "license" : "MIT",
 
     "require" : {
         "phalcon/incubator": "dev-master",
-        "ircmaxell/password-compat": "dev-master"
+        "ircmaxell/password-compat": "dev-master",
+        "michelf/php-markdown": "*"
     },
 
     "require-dev" : {

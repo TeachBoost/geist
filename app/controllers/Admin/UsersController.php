@@ -9,13 +9,6 @@ class UsersController extends \Base\Controller
         $this->checkLoggedIn = TRUE;
         $this->view->setMainView( 'admin' );
 
-        // check if they have access
-        //
-        if ( ! $this->auth->user[ 'access_users' ] )
-        {
-            return $this->quit( "You don't have access to users!", INFO, 'admin/articles' );
-        }
-
         return parent::beforeExecuteRoute();
     }
 

@@ -1,0 +1,51 @@
+
+<div id="admin" class="page">
+    <!-- Edit form -->
+    <form id="edit-form" class="clearfix" action="<?php echo $this->url->get( 'admin/users/save' ); ?>"
+        method="post" enctype="multipart/form-data">
+        <div style="display:none;">
+            <input type="hidden" name="id" value="<?php echo $user->id; ?>" />
+        </div>
+
+        <!-- Left col -->
+        <div class="left-col float-left">
+            <!-- General -->
+            <fieldset class="margin-bottom-40">
+                <legend>
+                    <h2>General</h2>
+                </legend>
+                <div class="margin-bottom-20">
+                    <label>Name</label>
+                    <input class="w95p" type="text" name="name" value="<?php echo $user->name; ?>" />
+                </div>
+                <div class="margin-bottom-20">
+                    <label>Email</label>
+                    <input class="w95p" type="text" name="email" value="<?php echo $user->email; ?>" />
+                </div>
+                <div class="margin-bottom-20">
+                    <label>Bio</label>
+                    <textarea class="w95p h100px" name="bio"><?php echo $user->bio; ?></textarea>
+                </div>
+                <div class="margin-bottom-20">
+                    <label>New Password</label>
+                    <input class="w95p" type="text" name="password" value="" />
+                </div>
+            </fieldset>
+        </div><!-- /left-col -->
+
+        <!-- Right col -->
+        <div class="right-col float-right">
+        </div><!-- /right-col -->
+    </form>
+
+    <!-- Delete -->
+    <div class="righted-text padding-top-30 margin-top-30" id="delete-wrapper">
+        <a class="fontsize-18 red button" href="javascript:;" id="delete-object">
+            Delete User
+        </a>
+        <a class="fontsize-18 black button" href="<?php echo $this->url->get( "admin/users/delete/{$user->id}" ); ?>"
+            id="really-delete-object" style="display:none;">
+            Click again to confirm
+        </a>
+    </div>
+</div>

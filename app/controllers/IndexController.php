@@ -13,7 +13,7 @@ class IndexController extends \Base\Controller
 
     public function indexAction()
     {
-        $this->view->posts = array();
+        $this->view->posts = \Db\Sql\Posts::getActive( 10 );
         $this->view->pick( 'home/index' );
     }
 }

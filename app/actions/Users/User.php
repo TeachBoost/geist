@@ -113,21 +113,7 @@ class User extends \Base\Action
 
         $user->name = $filter->sanitize( get( $data, 'name' ), 'striptags' );
         $user->email = $filter->sanitize( get( $data, 'email' ), 'striptags' );
-
-        // add any of the permissions; unset the access_users permission
-        // if the edited user is the same as the logged in one.
-        //
-        if ( int_eq( $user->id, $this->auth->userId ) )
-        {
-            unset( $data[ 'access_users' ] );
-        }
-        else
-        {
-            $user->access_users = ( get( $data, 'access_users' ) ) ? 1 : 0;
-        }
-
-        $user->access_members = ( get( $data, 'access_members' ) ) ? 1 : 0;
-        $user->access_press = ( get( $data, 'access_press' ) ) ? 1 : 0;
+        $user->bio = $filter->sanitize( get( $data, 'bio' ), 'striptags' );
 
         if ( ! $this->save( $user ) )
         {

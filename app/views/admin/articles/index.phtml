@@ -1,0 +1,45 @@
+<div id="admin" class="page">
+    <!-- Articles table -->
+<?php   $this->partial(
+            'partials/admin/nav',
+            [ 'adminNavPage' => 'articles' ]); ?>
+    <table id="articles" cellspacing="0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th class="lefted-text">Title</th>
+                <th class="lefted-text">Category</th>
+                <th class="lefted-text">Author</th>
+                <th class="lefted-text">Status</th>
+                <th class="lefted-text">Post Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+<?php   if ( count( $posts ) ):
+            foreach ( $posts as $post ):
+                $category = $post->getCategory();
+                $author = $post->getAuthor(); ?>
+
+            <tr>
+                <td class="centered-text"><?php echo $post->id; ?></td>
+                <td><?php echo ( strlen( $post->title ) > 80 ) ? substr( $post->title, 0, 80 ) . "&hellip;" : $post->title; ?></td>
+                <td><?php echo ( $category ) ? $category->name : ''; ?></td>
+                <td><?php echo ( $author ) ? $author->name : ''; ?></td>
+                <td><?php echo ucfirst( $post->status ); ?></td>
+                <td><?php echo date_str( $post->post_date, DATE_TABLE ); ?></td>
+                <td class="centered-text">
+                    <a class="" href="<?php echo $this->url->get( 'admin/articles/edit/'. $post->id ); ?>">Edit</a>
+                    <a class="margin-left-10" href="<?php echo $post->getPath(); ?>">View</a>
+                </td>
+            </tr>
+
+<?php       endforeach;
+        else: ?>
+            <tr>
+                <td class="centered-text" colspan="7">No articles to display!</td>
+            </tr>
+<?php   endif; ?>
+        </tbody>
+    </table>
+</div>

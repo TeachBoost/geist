@@ -50,6 +50,17 @@ foreach ( $config->app->modules as $segment => $namespace )
         ));
 }
 
-// set up aliases for select module functions
+// posts routes
+//
+$router->add(
+    "/([0-9]{4})/([0-9]{2})/([a-zA-Z0-9_-]+)",
+    array(
+        'namespace' => 'Controllers',
+        'controller' => 'posts',
+        'action' => 'show',
+        'year' => 1,
+        'month' => 2,
+        'slug' => 3
+    ));
 
 return $router;

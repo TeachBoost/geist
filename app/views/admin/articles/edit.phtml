@@ -1,0 +1,131 @@
+
+<div id="admin" class="page">
+    <!-- Edit form -->
+    <form id="edit-form" class="clearfix" action="<?php echo $this->url->get( 'admin/articles/save' ); ?>"
+        method="post" enctype="multipart/form-data">
+        <div style="display:none;">
+            <input type="hidden" name="id" value="<?php echo $post->id; ?>" />
+        </div>
+
+        <!-- Top section -->
+        <section class="clearfix margin-bottom-40">
+            <!-- Left col -->
+            <div class="left-col float-left">
+                <!-- General -->
+                <fieldset>
+                    <legend>
+                        <h2>General</h2>
+                    </legend>
+                    <div class="margin-bottom-20">
+                        <label>Title</label>
+                        <input class="w95p" type="text" name="title" value="<?php echo $post->title; ?>" />
+                    </div>
+                    <div class="margin-bottom-20">
+                        <label>Excerpt/Subtitle</label>
+                        <textarea class="w95p h50px" name="excerpt"><?php echo $post->excerpt; ?></textarea>
+                    </div>
+                    <div class="margin-bottom-20 clearfix">
+                        <div class="float-left margin-right-20 padding-right-20">
+                            <label>Post Date (displays on site)</label>
+                            <input class="w150px datepicker" type="text" name="post_date"
+                                value="<?php echo date_str( $post->post_date, DATE_PICKER, TRUE ); ?>" />
+                        </div>
+                        <div class="float-left">
+                            <label>Author</label>
+                            <select name="user_id">
+<?php   $postAuthorId = ( $postAuthor )
+            ? $postAuthor->id
+            : 0;
+        foreach ( $users as $user ): ?>
+                                <option value="<?php echo $user->id; ?>"
+                                    <?php echo ( int_eq( $user->id, $postAuthorId ) ) ? 'selected="selected"' : ''; ?>>
+                                    <?php echo $user->name; ?>
+                                </option>
+<?php   endforeach; ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label>Status</label>
+                        <div class="margin-bottom-5">
+                            <input type="radio" name="status" value="draft"
+                                <?php echo ( $post->status == 'draft' ) ? ' checked="checked"' : ''; ?> />
+                            <span>Draft</span>
+                        </div>
+                        <div>
+                            <input type="radio" name="status" value="published"
+                                <?php echo ( $post->status == 'published' ) ? ' checked="checked"' : ''; ?> />
+                            <span>Published</span>
+                        </div>
+                    </div>
+                </fieldset>
+            </div><!-- /left-col -->
+
+            <!-- Right col -->
+            <div class="right-col float-right">
+                <!-- Categories -->
+                <fieldset>
+                    <legend>
+                        <h2>Categories</h2>
+                    </legend>
+<?php   $selected = FALSE;
+        $catPicked = FALSE;
+        $postCategorySlug = ( $postCategory )
+            ? $postCategory->slug
+            : NULL;
+        foreach ( $categories as $category ):
+            $selected = str_eq( $category->slug, $postCategorySlug );
+            $catPicked = $catPicked || $selected; ?>
+                    <div class="margin-bottom-5">
+                        <label>
+                            <input type="radio" name="category" value="<?php echo $category->id; ?>"
+                                <?php echo ( $selected ) ? ' checked="checked"' : ''; ?>/>
+                            <span class="fontsize-16"><?php echo $category->name; ?></span>
+                        </label>
+                    </div>
+<?php   endforeach; ?>
+                    <div class="margin-bottom-5">
+                        <label>
+                            <input type="radio" name="category" value=""
+                                <?php echo ( $catPicked ) ? '' : ' checked="checked"'; ?>/>
+                            <em class="fontsize-16">None</em>
+                        </label>
+                    </div>
+                </fieldset>
+            </div><!-- /right-col -->
+        </section>
+
+        <!-- Markdown Editor -->
+        <section>
+            <fieldset>
+                <legend>
+                    <h2>Markdown Editor</h2>
+                </legend>
+                <div class="clearfix">
+                    <div class="float-left w50p">
+                        <label>Body/Content</label>
+                        <textarea id="markdown-editor" class="markdown-editor" name="body"
+                            oninput="this.editor.update();"><?php echo $post->body; ?></textarea>
+                    </div>
+                    <div class="float-left w50p">
+                        <label>HTML Preview</label>
+                        <div class="markdown-preview" id="markdown-preview">
+                            <?php echo $post->getHtmlBody(); ?>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </section>
+    </form>
+
+    <!-- Delete -->
+    <div class="righted-text padding-top-30 margin-top-30" id="delete-wrapper">
+        <a class="fontsize-18 red button" href="javascript:;" id="delete-object">
+            Delete Article
+        </a>
+        <a class="fontsize-18 black button" href="<?php echo $this->url->get( "admin/articles/delete/{$post->id}" ); ?>"
+            id="really-delete-object" style="display:none;">
+            Click again to confirm
+        </a>
+    </div>
+</div>

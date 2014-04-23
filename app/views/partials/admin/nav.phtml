@@ -4,18 +4,9 @@
 <?php   else: ?>
     <a href="<?php echo $this->url->get( 'admin/articles' ); ?>">Articles</a>
 <?php   endif;
-        if ( $this->auth->user[ 'access_users' ] ):
-            if ( $adminNavPage == 'users' ): ?>
+        if ( $adminNavPage == 'users' ): ?>
     <span>Users</span>
-<?php       else: ?>
+<?php   else: ?>
     <a href="<?php echo $this->url->get( 'admin/users' ); ?>">Users</a>
-<?php       endif;
-        endif;
-        if ( $this->auth->user[ 'access_members' ] ):
-            if ( $adminNavPage == 'members' ): ?>
-    <span>Members</span>
-<?php       else: ?>
-    <a href="<?php echo $this->url->get( 'admin/members' ); ?>">Members</a>
-<?php       endif;
-        endif; ?>
+<?php   endif; ?>
 </h2>
