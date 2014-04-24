@@ -44,5 +44,3 @@ define( 'DATE_DB_EMPTY', '0000-00-00 00:00:00' );
 //
 define( 'POST', 'post' );
 define( 'CATEGORY', 'category' );
-define( 'TAG', 'tag' );
-define( 'ARTIST', 'artist' );
