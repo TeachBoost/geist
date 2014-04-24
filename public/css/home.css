@@ -18,6 +18,10 @@ header.site-head {
     width: 100%;
 }
 
+header.site-head .overlay {
+    background: rgba( 0, 0, 0, 0.3 );
+}
+
 .vertical {
     display: table-cell;
     vertical-align: middle;
@@ -32,6 +36,10 @@ h2.blog-description {
     line-height: 1.5em;
     margin: 0 auto;
     width: 750px;
+    background: rgba( 0, 0, 0, 0.3 );
+    text-shadow: 0 1px 0 #222;
+    padding: 10px;
+    border-radius: 4px;
 }
 
 /*
