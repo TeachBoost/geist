@@ -14,6 +14,6 @@ return array(
         'query' => FALSE ),
 
     'database' => array(
-        'username' => 'someuser',
-        'password' => 'somepassword'
+        'username' => 'geist',
+        'password' => '##SQLPASSWORD##'
     ));
