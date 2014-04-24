@@ -1,2 +1,36 @@
-/* Posts
- */
+/*
+ * Header */
+ 
+section.post-header-wrapper {
+    background: #f9f9f9;
+    margin-bottom: 30px;
+    padding: 0 0 40px;
+}
+
+.post-header .blog-logo {
+    color: #333;
+    font-family: Signika, "Trebuchet MS", Tahoma, Verdana, 
+        Arial, Helvetica, sans-serif;
+    font-size: 28px;
+}
+
+.post-header .logomark {
+    position: relative; 
+    top: 24px;
+}
+
+.post-header .logotext {
+    left: 4px;
+    position: relative;
+    top: 10px;
+}
+
+
+/* 
+ * Posts */
+
+article {
+    margin: 0 auto;
+    padding-right: 200px;
+    width: 720px;
+}
