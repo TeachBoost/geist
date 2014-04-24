@@ -99,7 +99,7 @@ class Posts extends \Base\Model
      */
     function getHtmlBody()
     {
-        return Markdown::defaultTransform( nl2br( $this->body ) );
+        return Markdown::defaultTransform( $this->body );
     }
 
     /**

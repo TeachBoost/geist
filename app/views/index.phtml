@@ -10,8 +10,11 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-
+<?php   if ( $this->config->app->environment == 'production' ): ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->url->get( 'css/build.css' ); ?>">
+<?php   else: ?>
     <link rel="stylesheet" type="text/css" href="<?php echo $this->url->get( 'css/app.css' ); ?>">
+<?php   endif; ?>
     <link href='http://fonts.googleapis.com/css?family=Signika:400,700' 
         rel='stylesheet' type='text/css'>
 </head>
@@ -32,7 +35,11 @@
         </div>
     </footer>
 
+<?php   if ( $this->config->app->environment == 'production' ): ?>
+    <script src="<?php echo $this->url->get( 'js/dist/build.js' ); ?>"></script>
+<?php   else: ?>
     <script src="<?php echo $this->url->get( 'js/vendor/jquery.js' ); ?>"></script>
+<?php   endif; ?>
     <script type="text/javascript" src="<?php echo $this->url->get( 'js/main.js' ); ?>"></script>
 
 </body>

@@ -1,20 +1,20 @@
 /* Common
  */
-@import 'base.css';
-@import 'helpers.css';
-@import 'forms.css';
-@import 'buttons.css';
-@import 'tables.css';
+@import url( 'base.css' );
+@import url( 'helpers.css' );
+@import url( 'forms.css' );
+@import url( 'buttons.css' );
+@import url( 'tables.css' );
 
 /* Pages
  */
-@import 'auth.css';
-@import 'home.css';
-@import 'posts.css';
-@import 'admin.css';
+@import url( 'auth.css' );
+@import url( 'home.css' );
+@import url( 'posts.css' );
+@import url( 'admin.css' );
 
 /* Libraries
  */
-@import 'font-awesome.css';
-@import 'pikaday.css';
-@import 'timepicker.css';
+@import url( 'font-awesome.css' );
+@import url( 'pikaday.css' );
+@import url( 'timepicker.css' );

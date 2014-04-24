@@ -1,0 +1,11 @@
+{
+  "name": "geist",
+  "description": "Simple blog platform using Phalcon Boilerplate",
+  "author": "Mike Gioia <mike@particlebits.com>",
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-minify-css": "*",
+    "gulp-concat": "*",
+    "gulp-uglify": "*"
+  }
+}

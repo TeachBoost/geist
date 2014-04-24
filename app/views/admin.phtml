@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Admin -- TeachBoost Blog</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Admin -- TeachBoost Blog</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Style Sheets -->
-        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-        <link href="http://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="<?php echo $this->url->get( 'css/app.css' ); ?>">
-    </head>
-    <body class="admin">
-        <!-- Content -->
-        <div id="content">
+    <!-- Stylesheets -->
+    <link href="http://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet" type="text/css">
+<?php   if ( $this->config->app->environment == 'production' ): ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->url->get( 'css/build.css' ); ?>">
+<?php   else: ?>
+    <link rel="stylesheet" href="<?php echo $this->url->get( 'css/app.css' ); ?>">
+<?php   endif; ?>
+</head>
+
+<body class="admin">
+
+    <!-- Content -->
+    <div id="content">
 <?php   $this->partial( 'partials/admin/header' );
         echo $this->getContent();
         $this->partial( 'partials/admin/footer' ); ?>
-        </div>
+    </div>
 
-        <!-- JavaScripts -->
-        <script src="<?php echo $this->url->get( 'js/vendor/jquery.js' ); ?>"></script>
-        <script src="<?php echo $this->url->get( 'js/vendor/markdown.js' ); ?>"></script>
-        <script src="<?php echo $this->url->get( 'js/vendor/underscore.js' ); ?>"></script>
-        <script src="<?php echo $this->url->get( 'js/vendor/pikaday.js' ); ?>"></script>
-        <script src="<?php echo $this->url->get( 'js/vendor/jquery.pikaday.js' ); ?>"></script>
-        <script src="<?php echo $this->url->get( 'js/vendor/jquery.timepicker.js' ); ?>"></script>
-        <script src="<?php echo $this->url->get( 'js/admin.js' ); ?>"></script>
-    </body>
+    <!-- Javascripts -->
+<?php   if ( $this->config->app->environment == 'production' ): ?>
+    <script src="<?php echo $this->url->get( 'js/dist/build.js' ); ?>"></script>
+<?php   else: ?>
+    <script src="<?php echo $this->url->get( 'js/vendor/jquery.js' ); ?>"></script>
+    <script src="<?php echo $this->url->get( 'js/vendor/markdown.js' ); ?>"></script>
+    <script src="<?php echo $this->url->get( 'js/vendor/underscore.js' ); ?>"></script>
+    <script src="<?php echo $this->url->get( 'js/vendor/pikaday.js' ); ?>"></script>
+    <script src="<?php echo $this->url->get( 'js/vendor/jquery.pikaday.js' ); ?>"></script>
+    <script src="<?php echo $this->url->get( 'js/vendor/jquery.timepicker.js' ); ?>"></script>
+<?php   endif; ?>
+    <script src="<?php echo $this->url->get( 'js/admin.js' ); ?>"></script>
+
+</body>
 </html>
