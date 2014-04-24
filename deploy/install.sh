@@ -50,7 +50,7 @@ fi
 read -s -p "Enter SQL Password: " sqlReplace
 echo ''
 sqlFind="##SQLPASSWORD##"
-sed -i "s/${sqlFind}/${sqlReplace}/g" ${apppath}/etc/config.local.php
+sed -i -e 's|'$sqlFind'|'$sqlReplace'|g' $apppath/etc/config.local.php
 
 echo ''
 echo 'Done! Make sure you run the SQL statements.'
