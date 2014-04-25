@@ -1,13 +1,15 @@
+<?php   $cat_icon = category_icon( $category->slug ); ?>
+
 <aside class="post-caption-wrapper">
     <div class="post-caption">
-        <div class="blue circle">
-            <i class="fa fa-calendar"></i>
+        <div class="<?php echo $cat_icon[1]; ?> circle">
+            <i class="fa <?php echo $cat_icon[0]; ?>"></i>
         </div>
         <div class="more bottom">
             Read more articles from 
-            <a href="#">Category <?php echo $post->category_id; ?></a>
+            <a href="#"><?php echo $category->name; ?></a>.
         </div>
-        <div class="subscribe bottom">
+        <div class="subscribe">
             <strong>Like this post?</strong><br />
             Get updates by email!<br />
             <a href="#" class="gray button subscribe-button">Subscribe to LaunchPad</a>

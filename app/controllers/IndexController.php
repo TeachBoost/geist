@@ -14,6 +14,7 @@ class IndexController extends \Base\Controller
     public function indexAction()
     {
         $this->view->posts = \Db\Sql\Posts::getActive( 10 );
+        $this->view->categories = \Db\Sql\Categories::getAll();
         $this->view->pick( 'home/index' );
     }
 }

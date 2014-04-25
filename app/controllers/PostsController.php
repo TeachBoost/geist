@@ -30,7 +30,12 @@ class PostsController extends \Base\Controller
                 'action' => 'show404' ]);
         }
 
+        // get category name and slug
+        //
+        $category = \Db\Sql\Categories::getByID( $post->category_id );
+
         $this->data->post = $post;
+        $this->data->category = $category;
         $this->data->pageTitle = $post->title;
         $this->view->pick( 'posts/show' );
     }

@@ -163,3 +163,28 @@ function date_str( $datetime, $format = DATE_TABLE, $nullOnEmpty = FALSE )
 
     return $timestamp->format( $format );
 }
+
+/**
+ * Category icons array
+ */
+function category_icon( $slug = 'default' )
+{
+    $icons = array( 'events' => array( 'fa-calendar', 'red' ),
+                    'news' => array( 'fa-bullhorn', 'blue' ), 
+                    'release-notes' => array( 'fa-file-text-o', 'teal' ),
+                    'product-updates' => array( 'fa-bookmark', 'teal' ),
+                    'tips-tricks' => array( 'fa-magic', 'green' ),
+                    'education' => array( 'fa-book', 'purple' ),
+                    'technology' => array( 'fa-mobile', 'purple' ),
+                    'webinars' => array( 'fa-desktop', 'orange' ),
+                    'ilc' => array( 'fa-trophy', 'orange' ),
+                    'default' => array( 'fa-file-text-o', 'blue' )
+                );
+
+    if ( ! $slug || strlen( $slug ) == 0 )
+    {
+        return $icons[ 'default' ];
+    }
+
+    return $icons[ $slug ];
+}

@@ -26,7 +26,7 @@ section.post-header-wrapper {
 
 section.blog-caption-wrapper {
     background: rgba(255,255,255,0.9);
-    border-top: 3px solid #359fa3;
+    border-top: 4px solid #359fa3;
     color: #484848;
     margin-bottom: 30px;
     padding: 12px 0;
@@ -45,30 +45,41 @@ aside.post-caption-wrapper {
     }
 
     .circle {
+        background: #484848;
         color: #fff;
         font-size: 24px;
         height: 48px;
-        line-height: 45px;
         margin-bottom: 20px;
         text-align: center;
         width: 48px;
         border-radius: 24px;
     }
 
-    .blue.circle {
-        background: #007db6;
-    }
+        .circle .fa {
+            line-height: 50px !important;
+        }
+
+    .blue.circle { background: #007db6; }
+    .teal.circle { background: #359fa3; }
+    .red.circle { background: #b94f3c; }
+    .green.circle { background: #2ba02b; }
+    .purple.circle { background: #ab51c4; }
+    .orange.circle { background: #d1712d; }
 
     .bottom {
-        border-bottom: 1px solid #ccc;
+        border-bottom: 4px solid #ddd;
         margin-bottom: 20px;
         padding-bottom: 20px;
     }
 
     .subscribe-button {
         display: inline-block;
-        margin: 10px 0 0;
+        margin: 10px 0 30px;
         padding: 4px 10px !important;
+    }
+
+    .categories {
+        padding: 14px 0 30px;
     }
 
 
@@ -88,6 +99,12 @@ time.post-date,
 }
 
 section.byline {
-    line-height: 1.8em;
-    padding: 10px 0 25px;
+    border-left: 4px solid #ddd;
+    line-height: 1.7em;
+    margin: 25px 0 30px;
+    padding: 0 0 0 15px;
+}
+
+section.comments {
+    padding: 25px 0 30px;
 }

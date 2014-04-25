@@ -14,29 +14,61 @@
     </div>
 </header>
 
-<main class="content" role="main">
+<main class="content column" role="main">
+
+    <aside class="post-caption-wrapper">
+        <div class="post-caption">
+            <div class="categories">
+                <h3>Posts by Category</h3>
+
+<?php   if ( count( $categories ) > 0 ): ?>
+<?php       $total = count( $categories ); ?>
+<?php       $i = 1; ?>
+<?php       foreach ( $categories as $category ): ?>
+
+                <a href="<?php echo $category->slug; ?>" class="category-link">
+                    <?php echo $category->name; ?>
+                </a> <?php echo ( $i < $total ) ? '&middot;' : ''; ?>
+<?php           $i++; ?>
+<?php       endforeach; ?>
+<?php   endif; ?>
+
+            </div>
+            <div class="subscribe">
+                <h3>Subscribe by Email</h3>
+                <p>We'll email you when there are new posts here.</p>
+                <a href="#" class="gray button subscribe-button">Subscribe to LaunchPad</a>
+            </div>
+        </div>
+    </aside>
 
 <?php   foreach ( $posts as $post ): ?>
+<?php       if ( $post->status == "published" ): ?>
+<?php           $cat_icon = category_icon( $post->getCategory()->slug ); ?>
 
-    <article class="">
+    <article class="preview">
+        <div class="preview-icon <?php echo $cat_icon[1] ?> circle">
+            <i class="fa <?php echo $cat_icon[0] ?>"></i>
+        </div>
         <header class="post-header">
-            <span class="post-meta">
-                <?php echo date( DATE_DAY_NAME_YEAR, strtotime( $post->post_date ) ); ?>
-            </span>
             <h2 class="post-title">
                 <a href="<?php echo $post->getPath(); ?>">
                     <?php echo $post->title; ?>
                 </a>
             </h2>
+            <span class="post-meta">
+                <?php echo date( 'l, F jS, Y', strtotime( $post->post_date ) ); ?>
+            </span>
         </header>
         <section class="post-excerpt">
             <p>
-                <?php echo $post->excerpt; ?>&hellip;
-                <a class="read-more" href="<?php echo $post->getPath(); ?>">&raquo;</a>
+                <?php echo $post->excerpt; ?>
+                <!--<a class="read-more" href="<?php echo $post->getPath(); ?>"> More&rarr;</a>-->
             </p>
         </section>
     </article>
 
+<?php       endif; ?>
 <?php   endforeach; ?>
 
 </main>

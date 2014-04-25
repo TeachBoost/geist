@@ -46,4 +46,27 @@ class Categories extends \Base\Model
                 str_replace( ' ', '-', $name )
             ));
     }
+
+    /**
+     * Gets the category's name and slug by ID
+     */
+    static function getByID( $id )
+    {
+        return \Db\Sql\Categories::findFirst([
+            'id = :id:',
+            'bind' => [
+                'id' => $id ]
+            ]);
+    }
+
+        /**
+     * Get all active posts (not deleted)
+     */
+    static function getAll()
+    {
+        return \Db\Sql\Categories::query()
+            ->where( 'id > 0' )
+            ->order( 'name asc' )
+            ->execute();
+    }
 }
