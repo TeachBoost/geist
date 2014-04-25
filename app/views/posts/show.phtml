@@ -2,21 +2,30 @@
 <main class="content" role="main">
 
 <?php   $this->partial( 'partials/header' ); ?>
+<?php   $this->partial( 'partials/caption' ); ?>
 
     <article>
+
+<?php   $this->partial( 'partials/sideboard' ); ?>
+
         <h1 class="post-title">
             <?php echo $post->title; ?>
         </h1>
+
+        <time class="post-date">
+            Posted on <?php echo date( "M d, Y", strtotime( $post->post_date ) ); ?>.
+        </time>
 
         <section class="post-content">
             <?php echo $post->getHtmlBody(); ?>
         </section>
 
+        <section class="byline">
+            <strong><?php echo $post->getAuthor()->name; ?></strong><br />
+            <span class="title"><?php echo $post->getAuthor()->bio; ?></span>
+        </section>
+
         <footer class="post-footer">
-            <section class="author">
-                <h4><?php echo $post->getAuthor()->name; ?></h4>
-                <p><?php echo $post->getAuthor()->bio; ?></p>
-            </section>
 
 <?php   /*
             <section class="share">
