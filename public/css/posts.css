@@ -59,6 +59,11 @@ aside.post-caption-wrapper {
             line-height: 50px !important;
         }
 
+        .category-icon {
+            float: left;
+            margin: 0 10px 0 0;
+        }
+
     .blue.circle { background: #007db6; }
     .teal.circle { background: #359fa3; }
     .red.circle { background: #b94f3c; }
@@ -67,7 +72,6 @@ aside.post-caption-wrapper {
     .orange.circle { background: #d1712d; }
 
     .bottom {
-        border-bottom: 4px solid #ddd;
         margin-bottom: 20px;
         padding-bottom: 20px;
     }
@@ -80,6 +84,15 @@ aside.post-caption-wrapper {
 
     .categories {
         padding: 14px 0 30px;
+    }
+
+    .subscribe {
+        text-align: center;
+    }
+
+    .share {
+        margin: 0 auto;
+        width: 140px !important;
     }
 
 
