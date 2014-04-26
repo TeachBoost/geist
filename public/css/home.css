@@ -2,7 +2,9 @@
  * Header */
 
 header.site-head {
-    background: url( '../img/bg-bookshelf.jpg' ) 50% 50% no-repeat;
+    background: url( '../img/bg-bookshelf.jpg' );
+    background-position: 50% 0px;
+    background-repeat: no-repeat;
     background-size: cover;
     border-top: 4px solid #007db6;
     color: #fff;
