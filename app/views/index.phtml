@@ -18,48 +18,13 @@
     <link href='http://fonts.googleapis.com/css?family=Signika:400,700' 
         rel='stylesheet' type='text/css'>
 </head>
-<body class="">
+<body class="home">
 
     <?php echo $this->getContent() ?>
 
-    <footer class="site-footer">
-        <div class="inner column">
-            <div class="logo">
-                <a class="blog-logo" href="<?php echo $this->url->get( '' ); ?>">
-                    <span class="logotext">TeachBoost</span>
-                </a>
-            </div>
-            <div class="learnmore">
-                <h4>Learn More</h4>
-                <a href="https://teachboost.com/company/about" class="item">What is TeachBoost?</a>
-                <a href="https://teachboost.com/company/team" class="item">Our Team</a>
-                <a href="https://teachboost.com/contact" class="item">Contact Information</a>
-                <a href="https://teachboost.com/terms/privacy" class="item">Privacy Policy</a>
-                <a href="https://teachboost.com/terms/service" class="item">Terms &amp; Conditions</a>
-                <a href="https://teachboost.com/terms/brand" class="item">Brand Usage Guidelines</a>
-                <a href="http://blog.teachboost.com" class="item">Blog</a>
-            </div>
-            <div class="solutions">
-                <h4>Solutions</h4>
-                <a href="https://teachboost.com/solutions/teachers" class="item">Teachers</a>
-                <a href="https://teachboost.com/solutions/schools" class="item">School Leaders</a>
-                <a href="https://teachboost.com/solutions/districts" class="item">District Leaders</a>
-                <a href="https://teachboost.com/solutions/organizations" class="item">Organizations</a>
-            </div>
-            <div class="copyright">
-                <h4>Copyright Information</h4>
-                <p class="top-margin-5 no-bottom-margin">
-                    &copy; 2007-14 Schoolbinder, Inc.
-                </p>
-                <p>
-                    All school content and data property of and copyright its respective users.
-                    Please see our terms for all policies in intellectual property. Application
-                    icons provided by <a href="http://fontawesome.io" class="white-text underline">Font Awesome</a>.
-                </p>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </footer>
+<?php   if ( $this->dispatcher->getControllerName() != 'login' ): 
+            $this->partial( 'partials/footer' ); 
+        endif; ?>
 
 <?php   if ( $this->config->app->environment == 'production' ): ?>
     <script src="<?php echo $this->url->get( 'js/dist/build.js' ); ?>"></script>

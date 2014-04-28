@@ -1,4 +1,14 @@
-/* Auth page
- */
+/*
+ * Auth page */
+
 #auth.page {
-    width: 600px; margin-bottom: 100px; }
+    border-top: 4px solid #007db6;
+    width: 100%; 
+    margin: 0;
+    padding: 0; 
+}
+
+#auth.page fieldset {
+    margin: 75px auto 0;
+    width: 600px;
+}
