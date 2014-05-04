@@ -70,6 +70,7 @@ class PostsController extends \Base\Controller
                 ->appendTo( $channel );
         }
 
+        header( 'Content-Type: application/rss+xml; charset=utf-8' );
         echo $feed;
         exit;
     }
