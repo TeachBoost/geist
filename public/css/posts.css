@@ -46,7 +46,7 @@ aside.post-caption-wrapper {
     }
 
         .post-caption h3 {
-            font-size: 17px;
+            font-size: 18px;
             text-transform: uppercase;
         }
 
@@ -88,9 +88,16 @@ aside.post-caption-wrapper {
     }
 
     .categories {
-
-        padding: 12px 0 35px;
+        padding: 12px 0 40px;
         text-align: center;
+    }
+
+    .post-caption .search {
+        margin-top: 10px; 
+        width: 100px; 
+        height: 28px; 
+        top: 1px; 
+        position: relative;
     }
 
     .subscribe {

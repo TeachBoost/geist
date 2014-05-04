@@ -7,12 +7,30 @@
         </div>
         <div class="more bottom">
             Read more articles from 
-            <a href="#"><?php echo $category->name; ?></a>.
+            <a href="https://www.google.com/#q=site:blog.teachboost.com+<?php echo str_replace(" ", "+", $category->name); ?>"><?php echo $category->name; ?></a>.
         </div>
         <div class="subscribe clear">
             <strong>Like this post?</strong><br />
             Get updates by email!<br />
-            <a href="#" class="gray button subscribe-button">Subscribe to LaunchPad</a>
+            <a href="javascript:;" 
+               class="gray button subscribe-button" 
+               id="subscribe-button">Subscribe to LaunchPad</a>
+            <form action="http://teachboost.us4.list-manage.com/subscribe/post?u=bb91eae94006986230e4e46f0&amp;id=016c3a4dba" 
+                  method="post" 
+                  id="mc-embedded-subscribe-form" 
+                  name="mc-embedded-subscribe-form" 
+                  class="validate" 
+                  style="display:none; margin-bottom:25px;" novalidate>
+                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email address" style="margin: 10px 0 5px; width: 175px;" required>
+                <!-- real people should not fill this in and expect good things
+                     do not remove this or risk form bot signups -->
+                <div style="position: absolute; left: -5000px;">
+                    <input type="text" name="b_bb91eae94006986230e4e46f0_016c3a4dba" value="">
+                </div>
+                <div class="clear">
+                    <input type="submit" value="Subscribe!" name="subscribe" id="mc-embedded-subscribe" class="blue button fontsize-15" />
+                </div>
+            </form>
         </div>
         <div class="share addthis_toolbox addthis_default_style">
             <a class="addthis_button_preferred_1"></a>

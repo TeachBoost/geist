@@ -1,5 +1,22 @@
-/* Forms
- */
+/* 
+ * Forms */
+
+input {
+    border: 1px solid #aaa;
+    color: #333;
+    font-size: 15px;
+    height: 34px;
+    padding: 0 10px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+input:focus {
+    border: 1px solid #007db6;
+    outline: none;
+}
+
 fieldset label {
     display: block; margin: 0 0 8px; font-size: 15px; color: #777;
     padding: 0 0 0 2px; }
