@@ -99,7 +99,42 @@ class Posts extends \Base\Model
      */
     function getHtmlBody()
     {
-        return Markdown::defaultTransform( $this->body );
+        // get html from markdown
+        $html = Markdown::defaultTransform( $this->body );
+
+        // process any icons. these take the form [#icon:name] and
+        // should be replaced with font icon tags.
+        $html = preg_replace(
+            "/\[\#icon:(.*?)\]/",
+            "<i class=\"fa fa-$1\"></i>",
+            $html );
+
+        // process any youtube videos
+        $youtubeEmbed = sprintf(
+            '<iframe width="%s" height="%s" src="%s/%s?rel=0" '.
+                'frameborder="0" allowfullscreen></iframe>',
+            '670',
+            '380',
+            '//www.youtube.com/embed',
+            '$1' ); // preg variable of video ID
+        $html = preg_replace( "/\[\#youtube:(.*?)\]/", $youtubeEmbed, $html );
+
+        // process any vimeo videos
+        $vimeoEmbed = sprintf(
+            '<iframe src="%s/%s?%s" width="%s" height="%s"' .
+                'frameborder="0" allowfullscreen></iframe>',
+            '//player.vimeo.com/video',
+            '$1', // preg variable of video ID
+            'title=0&portrait=0&badge=0',
+            '670',
+            '380' );
+        $html = preg_replace( "/\[\#vimeo:(.*?)\]/", $vimeoEmbed, $html );
+
+        // process any images
+        $img = '<img src="$1" alt="" title="" />';
+        $html = preg_replace( "/\[\#image:(.*?)\]/", $img, $html );
+
+        return $html;
     }
 
     /**
@@ -109,7 +144,6 @@ class Posts extends \Base\Model
     {
         // replace non letter or digits by -, then trim, transliterate
         // utf8 characters, lowercase it, and remove unwanted characters.
-        //
         $slug = preg_replace( '~[^\\pL\d]+~u', '-', $this->title );
         $slug = trim( $slug, '-' );
         $slug = iconv( 'utf-8', 'us-ascii//TRANSLIT', $slug );
@@ -123,7 +157,6 @@ class Posts extends \Base\Model
 
         // check if this slug exists. if so, we need to keep incrementing
         // a counter on the end.
-        //
         $checkSlug = $slug;
         $counter = 1;
         $slugOkay = FALSE;
