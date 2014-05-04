@@ -5,15 +5,15 @@ return array(
         'environment' => 'production' ),
 
     'paths' => array(
-        'baseUri' => 'http://phalcon.com/',
-        'assetUri' => 'http://phalcon.com/',
-        'hostname' => 'phalcon.com' ),
+        'baseUri' => 'http://blog.teachboost.net/',
+        'assetUri' => 'http://blog.teachboost.net/',
+        'hostname' => 'blog.teachboost.net' ),
 
     'profiling' => array(
         'system' => FALSE,
         'query' => FALSE ),
 
     'database' => array(
-        'username' => 'geist',
+        'username' => '##SQLUSER##',
         'password' => '##SQLPASSWORD##'
     ));

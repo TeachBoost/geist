@@ -2,13 +2,12 @@
     "name" : "teachboost/geist",
     "description" : "Blogging platform",
     "license" : "MIT",
-
     "require" : {
         "phalcon/incubator": "dev-master",
         "ircmaxell/password-compat": "dev-master",
-        "michelf/php-markdown": "*"
+        "michelf/php-markdown": "*",
+        "suin/php-rss-writer": "dev-master"
     },
-
     "require-dev" : {
         "phpunit/phpunit": "3.7.*"
     }

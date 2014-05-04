@@ -28,7 +28,7 @@ gulp.task( 'build-css', function () {
     gulp.src( cssFiles )
         .pipe( concat( 'build.css' ) )
         .pipe( minifyCSS( opts ) )
-        .pipe( gulp.dest( './public/' ) );
+        .pipe( gulp.dest( './public/css/' ) );
 
 });
 

@@ -1,12 +1,29 @@
 @charset "UTF-8";
-body{font-family:Asap,Segoe,"Segoe UI",Optima,Arial,sans-serif;font-size:16px;margin:0;padding:0;color:#555}
-h1,h2,h3{font-weight:400;margin:0 0 10px}
-p{line-height:1.5em}
-a:hover{color:#6905cd}
+html{height:100%;max-height:100%}
+body{font-family:"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:15px;height:auto;margin:0;padding:0;color:#333;width:100%}
+body.home{height:100%;max-height:100%}
+h1,h2,h3,h4{font-family:Signika,"Trebuchet MS",Tahoma,Verdana,Arial,Helvetica,sans-serif;font-weight:400;margin:0 0 15px}
+h1{font-size:32px;line-height:1.1em}
+li,p{line-height:1.6em}
+li{margin-bottom:5px}
+a,a:active,a:visited{color:#007db6;text-decoration:none}
+a:hover{color:#111}
 fieldset{border:none;padding:15px;background:#f1f1f1;border-radius:2px;box-shadow:0 1px 2px #aaa}
-fieldset legend h2{font-family:'Share Tech Mono',monospace;text-transform:uppercase;font-size:18px;padding:5px 10px;background:#e1e1e1}
+fieldset legend h2{font-family:Signika,"Trebuchet MS",Tahoma,Verdana,Arial,Helvetica,sans-serif;text-transform:uppercase;font-size:18px;padding:8px 10px 5px;background:#e1e1e1}
+.sans{font-family:"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,"Helvetica Neue",Helvetica,Arial,sans-serif}
+main{min-height:350px;position:relative}
+.column{margin:0 auto;width:920px}
 .page{margin:25px auto 60px;width:960px}
 .error-page{margin:25px auto 120px;width:960px}
+footer.site-footer{background:#f9f9f9;border-top:4px solid #ddd;clear:both;margin-top:30px;padding:25px 0 30px;text-shadow:0 1px 0 #fff}
+footer.site-footer .inner,footer.site-footer p{font-size:15px;line-height:1.4em}
+footer.site-footer h4{font-size:18px}
+footer.site-footer a.item{display:block;margin-bottom:1px}
+footer.site-footer .learnmore,footer.site-footer .logo{float:left;padding:0 20px 0 0;width:175px}
+footer.site-footer .solutions{float:left;padding:0 20px 0 0;width:150px}
+footer.site-footer .copyright{float:left;padding:0;width:340px}
+footer.site-footer .blog-logo{color:#484848;font-family:Signika,"Trebuchet MS",Tahoma,Verdana,Arial,Helvetica,sans-serif;font-size:24px;position:relative;top:1px}
+.clear{clear:both}
 .blocked{display:block}
 .centered-text{text-align:center}
 .lefted-text{text-align:left}
@@ -107,6 +124,8 @@ fieldset legend h2{font-family:'Share Tech Mono',monospace;text-transform:upperc
 .h150px{height:150px}
 .h200px{height:200px}
 .h250px{height:250px}
+input{border:1px solid #aaa;color:#333;font-size:15px;height:34px;padding:0 10px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px}
+input:focus{border:1px solid #007db6;outline:0}
 fieldset label{display:block;margin:0 0 8px;font-size:15px;color:#777;padding:0 0 0 2px}
 fieldset input[type=password],fieldset input[type=text],fieldset textarea{padding:8px 10px;font-size:16px;background-color:#fff;border-color:#d3d3d3 #d3d3d3 #bbb;border-image:none;border-style:solid;border-width:1px;box-shadow:0 1px 3px #d3d3d3;color:#333;border-radius:2px}
 a.button,input.button{border-radius:3px;border-top-width:0;border-left-width:0;border-right-width:0;border-bottom-width:2px;border-style:solid;padding:5px 10px;cursor:pointer;text-decoration:none}
@@ -131,15 +150,23 @@ table td{padding:10px 12px;border:none;color:#333;border-left:1px solid #eee;bor
 table tr td:last-child{border-right:1px solid #ddd}
 table tr td:first-child{border-left:1px solid #ddd}
 table tr:last-child td{border-bottom-color:#ddd}
-#auth.page{width:600px;margin-bottom:100px}
+#auth.page{border-top:4px solid #007db6;width:100%;margin:0;padding:0}
+#auth.page fieldset{margin:75px auto 0;width:600px}
+header.site-head{background:url('../img/bg-bookshelf.jpg');background-position:50% 0;background-repeat:no-repeat;background-size:cover;border-top:4px solid #007db6;color:#fff;display:table;height:55%;max-height:450px;min-height:300px;margin:0 0 35px;padding:0;position:relative;text-align:center;text-shadow:0 2px 0 #111;width:100%}
+header.site-head .overlay{background:rgba(0,0,0,.3)}
+header.site-head .blog-logo img{border:3px solid #fff;border-radius:4px}
+.vertical{display:table-cell;vertical-align:middle}
+h1.blog-title{font-size:56px;margin:30px 0}
+h2.blog-description{line-height:1.5em;margin:0 auto;width:750px;background:rgba(0,0,0,.3);text-shadow:0 1px 0 #222;padding:10px;border-radius:4px}
+h2.blog-description a{color:#fff}
 nav.header-nav{float:right}
 nav.header-nav ul{margin:0}
-nav .node{border-top:5px solid #fff;display:block;float:right;font-size:15px}
+nav .node{border-top:5px solid #f9f9f9;display:block;float:right;font-size:15px}
 nav .node.active{border-color:#383838}
 nav .node.active:hover{border-color:#111}
-nav .node.link{margin-left:15px;margin-bottom:-20px;padding-top:26px;padding-bottom:20px}
+nav .node.link{margin-left:15px;margin-bottom:-20px;padding-top:32px;padding-bottom:20px}
 nav .node.link:hover .menu{display:block}
-nav .node.btn{line-height:19px;margin-left:17px;padding-top:26px}
+nav .node.btn{line-height:19px;margin-left:17px;padding-top:33px}
 nav .top-menu{margin:0}
 nav .menu{background:rgba(25,25,25,.9);color:#f5f5f5;display:none;padding:8px;position:absolute;margin-left:-64px!important;top:70px;z-index:100;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px}
 nav .menu:after{border-color:transparent transparent rgba(25,25,25,.9);border-style:solid;border-width:10px;content:'';display:block;height:0;left:74px;position:absolute;top:-20px;width:0}
@@ -148,17 +175,49 @@ nav .menu.solutions:after{left:58px}
 nav .menu .item{cursor:pointer;display:block;line-height:19px;padding:4px 6px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px}
 nav .menu .item:hover{background:rgba(255,255,255,.2);color:#fff}
 nav .menu a{color:#f5f5f5;display:block}
+article.preview{margin:0 0 20px;padding:0 0 15px}
+article.preview:last-child{border:none}
+article.preview .preview-icon{float:left}
+article.preview .post-excerpt,article.preview .post-header{margin-left:64px}
+article.preview .post-meta{color:#888}
+article.preview .post-title{font-size:28px;margin-bottom:8px;padding:5px 0 0}
+article.preview .post-excerpt p{font-size:16px;line-height:1.7em}
+section.post-header-wrapper{background:#f9f9f9;padding:0 0 40px}
+.post-header .blog-logo{color:#333;font-family:Signika,"Trebuchet MS",Tahoma,Verdana,Arial,Helvetica,sans-serif;font-size:28px}
+.post-header .logomark{position:relative;top:24px}
+.post-header .logotext{left:4px;position:relative;top:10px}
+section.blog-caption-wrapper{background:#fff;border-top:4px solid #359fa3;border-bottom:2px solid #fff;color:#484848;margin-bottom:30px;padding:12px 0;width:100%;z-index:1}
+aside.post-caption-wrapper{position:absolute;right:0;width:200px}
+.post-caption{line-height:1.5em}
+.post-caption h3{font-size:18px;text-transform:uppercase}
+.circle{background:#484848;color:#fff;font-size:24px;height:48px;margin-bottom:20px;text-align:center;width:48px;border-radius:24px}
+.circle .fa{line-height:50px!important}
+.category-icon{float:left;margin:0 10px 0 0}
+.blue.circle{background:#007db6}
+.teal.circle{background:#359fa3}
+.red.circle{background:#b94f3c}
+.green.circle{background:#2ba02b}
+.purple.circle{background:#ab51c4}
+.orange.circle{background:#d1712d}
+.bottom{padding-bottom:30px}
+.subscribe-button{display:inline-block;margin:10px 0 30px;padding:4px 10px!important}
+.categories{padding:12px 0 40px;text-align:center}
+.post-caption .search{margin-top:10px;width:100px;height:28px;top:1px;position:relative}
+.subscribe{text-align:center}
+.share{margin:0 auto;width:140px!important}
+article{margin:0 auto;padding-right:250px;position:relative;width:670px}
+.title,time.post-date{color:#888}
+section.byline{border-left:4px solid #ddd;line-height:1.7em;margin:25px 0 30px;padding:0 0 0 15px}
+section.comments{padding:25px 0 30px}
 body.admin{padding-top:64px}
-a{color:#6905cd}
 #admin.page{width:auto;margin:auto;padding:50px 25px 25px;max-width:1400px}
-#admin-header{background:#e9e9e9;position:fixed;width:100%;height:65px;top:0;border-bottom:1px solid #d9d9d9;z-index:1}
+#admin-header{background:#e9e9e9;position:fixed;width:100%;height:65px;top:0;border-bottom:4px solid #359fa3;z-index:1}
 #admin-header header{width:auto;margin:0 auto;padding:12px 25px;height:auto;line-height:40px;max-width:1400px}
 #admin-header header .title{font-size:22px}
-#admin-header header .title span{color:#aaa;margin:0 15px}
+#admin-header header .title span{color:#a8a8a8;margin:0 10px 0 12px}
 h2.with-nav{border-bottom:1px solid #ddd;padding-bottom:6px}
-h2.with-nav span{padding:10px 16px 8px;margin-right:20px;border:1px solid #ddd;border-radius:4px 4px 0 0;border-bottom:0;line-height:1px;background:#fff}
+h2.with-nav span{padding:10px 16px 8px;margin-right:20px;border:1px solid #ddd;border-radius:4px 4px 0 0;border-bottom:0;line-height:1px;background:#fff;top:-1px;position:relative}
 h2.with-nav a{font-weight:400;text-decoration:none;margin-right:20px}
-h2.with-nav a:hover{text-decoration:underline}
 #admin-messages{margin:25px auto 0;max-width:1400px;padding:0 25px}
 #admin-messages .message{margin-bottom:10px;padding:10px;color:#fff;border-radius:3px}
 #admin-messages .message.success{background:#2ba02b}

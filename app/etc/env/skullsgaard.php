@@ -13,7 +13,7 @@ return array(
         'secure' => TRUE ),
 
     'database' => array(
-        'password' => 'root' ),
+        'password' => '##SQLPASSWORD##' ),
 
     'profiling' => array(
         'query' => FALSE
