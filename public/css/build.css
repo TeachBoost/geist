@@ -124,8 +124,13 @@ footer.site-footer .blog-logo{color:#484848;font-family:Signika,"Trebuchet MS",T
 .h150px{height:150px}
 .h200px{height:200px}
 .h250px{height:250px}
+input[type=email],input[type=text],select,textarea{border:1px solid #aaa;color:#333;font-size:15px;height:34px;padding:0 10px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px}
+select{height:40px}
+input[type=radio]{position:relative;top:-1px}
+input:focus{border:1px solid #007db6;outline:0}
 fieldset label{display:block;margin:0 0 8px;font-size:15px;color:#777;padding:0 0 0 2px}
-fieldset input[type=password],fieldset input[type=text],fieldset textarea{padding:8px 10px;font-size:16px;background-color:#fff;border-color:#d3d3d3 #d3d3d3 #bbb;border-image:none;border-style:solid;border-width:1px;box-shadow:0 1px 3px #d3d3d3;color:#333;border-radius:2px}
+fieldset input[type=password],fieldset input[type=text],fieldset textarea{padding:2px 10px;font-size:16px;background-color:#fff;border-color:#d3d3d3 #d3d3d3 #bbb;border-image:none;border-style:solid;border-width:1px;box-shadow:0 1px 3px #d3d3d3;color:#333;border-radius:2px}
+fieldset textarea{height:auto;padding:8px 10px}
 a.button,input.button{border-radius:3px;border-top-width:0;border-left-width:0;border-right-width:0;border-bottom-width:2px;border-style:solid;padding:5px 10px;cursor:pointer;text-decoration:none}
 .button.fontsize-18{padding:8px 14px 7px;border-radius:4px}
 .button.fontsize-16{padding:7px 12px 6px}
@@ -150,13 +155,24 @@ table tr td:first-child{border-left:1px solid #ddd}
 table tr:last-child td{border-bottom-color:#ddd}
 #auth.page{border-top:4px solid #007db6;width:100%;margin:0;padding:0}
 #auth.page fieldset{margin:75px auto 0;width:600px}
-header.site-head{background:url('../img/bg-bookshelf.jpg');background-position:50% 0;background-repeat:no-repeat;background-size:cover;border-top:4px solid #007db6;color:#fff;display:table;height:55%;max-height:450px;min-height:300px;margin:0 0 35px;padding:0;position:relative;text-align:center;text-shadow:0 2px 0 #111;width:100%}
-header.site-head .overlay{background:rgba(0,0,0,.3)}
+header.site-head{color:#fff;display:table;height:55%;max-height:450px;min-height:300px;padding:0;position:relative;text-align:center;text-shadow:0 2px 0 #111;width:100%}
+header.site-head .bg-image{background:url('../img/bg-bookshelf.jpg');background-position:50% 0;background-repeat:no-repeat;background-size:cover;position:fixed;height:450px;top:0;left:0;right:0;z-index:1}
+header.site-head .overlay{border-top:4px solid #007db6;background:rgba(0,0,0,.3);position:relative;z-index:2}
 header.site-head .blog-logo img{border:3px solid #fff;border-radius:4px}
 .vertical{display:table-cell;vertical-align:middle}
 h1.blog-title{font-size:56px;margin:30px 0}
 h2.blog-description{line-height:1.5em;margin:0 auto;width:750px;background:rgba(0,0,0,.3);text-shadow:0 1px 0 #222;padding:10px;border-radius:4px}
 h2.blog-description a{color:#fff}
+h2.blog-description span{display:block}
+section.mobile-menu{background:#333;color:#fff;display:none}
+section.mobile-menu ul{border-top:4px solid #2a7e81;list-style:none;margin:0;padding:0}
+section.mobile-menu li{border-bottom:3px solid #585858;margin:0;padding:0}
+section.mobile-menu li:last-child{border:none}
+section.mobile-menu a{color:#fff;display:block;padding:6px 10px}
+section.mobile-menu a:hover{background:#282828;color:#fff}
+.mobile-burger{display:none}
+main.home{background:#fff;padding-top:35px;position:relative;z-index:2}
+main.home section{position:relative}
 nav.header-nav{float:right}
 nav.header-nav ul{margin:0}
 nav .node{border-top:5px solid #f9f9f9;display:block;float:right;font-size:15px}
@@ -182,6 +198,26 @@ article.preview .post-title{font-size:28px;margin-bottom:8px;padding:5px 0 0}
 article.preview .post-excerpt p{font-size:16px;line-height:1.7em}
 .post-caption input{border:1px solid #aaa;color:#333;font-size:15px;height:34px;padding:0 10px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px}
 .post-caption input:focus{border:1px solid #007db6;outline:0}
+@media only screen and (max-width :568px){header.site-head{height:40%;margin:0 0 25px;max-height:250px;min-height:200px}
+header.site-head .blog-logo img{margin:15px 0 0}
+h1.blog-title{font-size:30px;margin:20px 0}
+h2.blog-description{font-size:17px;padding:12px 10px 14px;width:auto;border-radius:0;-moz-border-radius:0;-webkit-border-radius:0}
+h2.blog-description span{display:inline}
+.column{width:auto}
+article.preview{margin-bottom:35px;padding:0;width:auto}
+article.preview .preview-icon{float:right;margin:0 10px}
+article.preview .post-title{font-size:19px;min-height:60px;line-height:1.4em;margin:0 10px 0 0;padding:0}
+article.preview .post-meta{font-size:13px}
+article.preview .post-excerpt,article.preview .post-header{margin-left:10px}
+article.preview .post-excerpt p{font-size:15px;line-height:1.5em;margin:10px 0}
+aside.post-caption-wrapper{display:none}
+footer.site-footer{padding:25px 10px 0}
+footer.site-footer .logo{padding-bottom:20px}
+footer.site-footer h4{margin-bottom:10px}
+footer.site-footer .copyright,footer.site-footer .learnmore,footer.site-footer .solutions{clear:left;float:none;padding-bottom:20px;width:auto}
+footer.site-footer a.item{display:inline;margin:0 10px 0 0}
+footer.site-footer p{font-size:13px}
+.mobile-burger,.mobile-burger:hover{color:#fff;display:block;font-size:22px;padding:5px 0 0 10px;position:absolute}}
 section.post-header-wrapper{background:#f9f9f9;padding:0 0 40px}
 .post-header .blog-logo{color:#333;font-family:Signika,"Trebuchet MS",Tahoma,Verdana,Arial,Helvetica,sans-serif;font-size:28px}
 .post-header .logomark{position:relative;top:24px}

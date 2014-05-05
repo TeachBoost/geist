@@ -1,38 +1,70 @@
-/*
- * Subscription Form Toggle */
-$( '#subscribe-button' ).on( 'click', function() {
-    $( this ).hide();
-    $( '#mc-embedded-subscribe-form' ).show();
-    return false;
-});
+/**
+ * Main application JS
+ */
+jQuery( function( $ ) {
 
-/*
- * Google Search Box */
-$( '#search-submit' ).on( 'click', function() {
-    var url = 'https://www.google.com/#q=site:blog.teachboost.com+';
-    var query = $( '#search-query' ).val().replace( ' ', '+' );
-    var action = url + query;
-    window.location = action;
-    return false;
-});
+var MainPage = {
+    // Subscription Form Toggle
+    subscribeButton: function () {
+        var $button = $( '#subscribe-button' ),
+            $form = $( '#mc-embedded-subscribe-form' );
 
-/*
- * Mobile Menu */
-$( '#mobile-burger' ).on( 'click', function() {
+        $button.on( 'click', function() {
+            $button.hide();
+            $form.show();
+            return false;
+        });
+    },
 
-    // get menu state and menu element
-    //
-    var state = $( this ).data( 'state' );
-    var menu = $( '#mobile-menu' );
+    // Google Search Box
+    search: function () {
+        var $query = $( '#search-query' ),
+            $submit = $( '#search-submit' );
 
-    // toggle this thing
-    //
-    menu.slideToggle( 300, function() { });
+        $submit.on( 'click', function() {
+            var url = 'https://www.google.com/#q=site:blog.teachboost.com+';
+            var query = $query.val().replace( ' ', '+' );
+            var action = url + query;
+            window.location = action;
+            return false;
+        });
+    },
 
-    // adjust the button's data state
-    //
-    ( state == 'off' )
-        ? $( this ).data( 'state', 'on' ).children( 'i' ).addClass( 'fa-rotate-90' )
-        : $( this ).data( 'state', 'off' ).children( 'i' ).removeClass( 'fa-rotate-90' );
+    // Mobile Menu
+    mobileMenu: function () {
+        var $menu = $( '#mobile-menu' ),
+            $burger = $( '#mobile-burger' );
+
+        $burger.on( 'click', function() {
+            // get menu state and menu element
+            var state = $burger.data( 'state' );
+            // toggle this thing
+            $menu.slideToggle( 300, function() { });
+            // adjust the button's data state
+            ( state == 'off' )
+                ? $burger.data( 'state', 'on' ).children( 'i' ).addClass( 'fa-rotate-90' )
+                : $burger.data( 'state', 'off' ).children( 'i' ).removeClass( 'fa-rotate-90' );
+        });
+    },
+
+    // Parallax scrolling
+    parallax: function () {
+        var $bgImage = $( '#parallax' );
+        if ( ! $bgImage.length ) return;
+
+        var $window = $( window );
+        $window.on( 'scroll', function () {
+            var scrollTop = $window.scrollTop();
+            $bgImage.css( 'top', -1 * scrollTop * 0.2 );
+        });
+    }
+};
+
+// call our page functions
+//
+MainPage.subscribeButton();
+MainPage.search();
+MainPage.mobileMenu();
+MainPage.parallax();
 
 });

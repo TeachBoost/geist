@@ -2,17 +2,11 @@
  * Header */
 
 header.site-head {
-    background: url( '../img/bg-bookshelf.jpg' );
-    background-position: 50% 0px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-top: 4px solid #007db6;
     color: #fff;
     display: table;
     height: 55%;
     max-height: 450px;
     min-height: 300px;
-    margin: 0 0 35px;
     padding: 0;
     position: relative;
     text-align: center;
@@ -20,8 +14,24 @@ header.site-head {
     width: 100%;
 }
 
+header.site-head .bg-image {
+    background: url( '../img/bg-bookshelf.jpg' );
+    background-position: 50% 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    height: 450px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
 header.site-head .overlay {
+    border-top: 4px solid #007db6;
     background: rgba( 0, 0, 0, 0.3 );
+    position: relative;
+    z-index: 2;
 }
 
 header.site-head .blog-logo img {
@@ -99,6 +109,19 @@ section.mobile-menu {
     display: none;
 }
 
+
+/*
+ * Main */
+
+main.home {
+    background: #fff;
+    padding-top: 35px;
+    position: relative;
+    z-index: 2;
+}
+main.home section {
+    position: relative;
+}
 
 /*
  * Navigation */
