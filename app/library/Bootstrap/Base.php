@@ -97,8 +97,7 @@ abstract class Base
                 'Controllers' => APP_PATH .'/controllers/',
                 'Db' => APP_PATH .'/models/',
                 'Lib' => APP_PATH .'/library/',
-                'Phalcon' => VENDOR_PATH .'/phalcon/incubator/Library/Phalcon/',
-                'Michelf' => VENDOR_PATH .'/michelf/php-markdown/Michelf/'
+                'Phalcon' => VENDOR_PATH .'/phalcon/incubator/Library/Phalcon/'
             ));
         $loader->registerClasses(
             array(

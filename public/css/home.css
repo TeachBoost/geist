@@ -226,6 +226,26 @@ article.preview {
 
 
 /*
+ * Side */
+
+.post-caption input {
+    border: 1px solid #aaa;
+    color: #333;
+    font-size: 15px;
+    height: 34px;
+    padding: 0 10px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+.post-caption input:focus {
+    border: 1px solid #007db6;
+    outline: none;
+}
+
+
+/*
  * Small screens (using iphone max width) */
 
 @media only screen and (max-width : 568px) { 
@@ -331,7 +351,7 @@ article.preview {
             font-size: 13px;
         }
 
-    /* the mobile drawer at the top for links and subscribe functionality */
+    /* Mobile Drawer */
 
     .mobile-burger,
     .mobile-burger:hover {

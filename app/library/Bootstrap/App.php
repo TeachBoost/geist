@@ -4,7 +4,8 @@ namespace Lib\Bootstrap;
 
 use Phalcon\Mvc\Application,
     Phalcon\Mvc\View,
-    Phalcon\Mvc\Dispatcher;
+    Phalcon\Mvc\Dispatcher,
+    Phalcon\Loader as Loader;
 
 class App extends \Lib\Bootstrap\Base
 {
@@ -33,6 +34,29 @@ class App extends \Lib\Bootstrap\Base
         // controller before output is sent.
         //
         echo $application->handle()->getContent();
+    }
+
+    protected function initLoader()
+    {
+        $loader = new Loader();
+        $loader->registerNamespaces(
+            array(
+                'Actions' => APP_PATH .'/actions/',
+                'Base' => APP_PATH .'/base/',
+                'Controllers' => APP_PATH .'/controllers/',
+                'Db' => APP_PATH .'/models/',
+                'Lib' => APP_PATH .'/library/',
+                'Phalcon' => VENDOR_PATH .'/phalcon/incubator/Library/Phalcon/',
+                'Michelf' => VENDOR_PATH .'/michelf/php-markdown/Michelf/',
+                'Suin' => VENDOR_PATH .'/suin/php-rss-writer/Source/Suin/'
+            ));
+        $loader->registerClasses(
+            array(
+                '__' => VENDOR_PATH .'/Underscore.php'
+            ));
+        $loader->register();
+
+        $this->di[ 'loader' ] = $loader;
     }
 
     protected function initConfig()

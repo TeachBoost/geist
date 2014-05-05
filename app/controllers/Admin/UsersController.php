@@ -21,7 +21,7 @@ class UsersController extends \Base\Controller
         //
         $this->view->pick( 'admin/users/index' );
         $this->view->users = \Db\Sql\Users::find([ 'is_deleted = 0' ]);
-        $this->view->backPage = '';
+        $this->view->backPage = 'admin/articles';
         $this->view->buttons = [ 'newUser' ];
     }
 

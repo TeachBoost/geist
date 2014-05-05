@@ -36,7 +36,7 @@
 </div>
 
 <!-- Messages -->
-<?php   if ( $flashMessages ): ?>
+<?php   if ( isset( $flashMessages ) && $flashMessages ): ?>
 <div id="admin-messages">
 <?php       foreach ( $flashMessages as $message ): ?>
     <div class="message <?php echo key( $message ); ?>"><?php echo current( $message ); ?></div>
