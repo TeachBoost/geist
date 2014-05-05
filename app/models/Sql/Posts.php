@@ -20,13 +20,14 @@ class Posts extends \Base\Model
     public $created_at;
     public $modified_at;
 
+    private $category;
+
     function initialize()
     {
         $this->setSource( 'posts' );
         $this->addBehavior( 'timestamp' );
 
-        $this->images = NULL;
-        $this->image = NULL;
+        $this->category = NULL;
     }
 
     /**
@@ -61,11 +62,21 @@ class Posts extends \Base\Model
      */
     function getCategory()
     {
-        return \Db\Sql\Categories::findFirst([
+        if ( ! is_null( $this->category ) )
+        {
+            return $this->category;
+        }
+
+        $category = \Db\Sql\Categories::findFirst([
             'id = :id:',
             'bind' => [
                 'id' => $this->category_id ]
             ]);
+        $this->category = ( $category )
+            ? $category
+            : new \Db\Sql\Categories();
+
+        return $this->category;
     }
 
     /**

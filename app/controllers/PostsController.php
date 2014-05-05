@@ -66,6 +66,8 @@ class PostsController extends \Base\Controller
             $item
                 ->title( $post->title )
                 ->description( $post->excerpt )
+                ->pubDate( strtotime( $post->post_date ) )
+                ->category( $post->getCategory()->name )
                 ->url( $post->getPath() )
                 ->appendTo( $channel );
         }
