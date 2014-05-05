@@ -66,7 +66,7 @@ class Categories extends \Base\Model
     {
         return \Db\Sql\Categories::query()
             ->where( 'id > 0' )
-            ->order( 'name asc' )
+            ->orderBy( 'name asc' )
             ->execute();
     }
 }
