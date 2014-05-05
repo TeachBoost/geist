@@ -1,6 +1,7 @@
 <?php   $this->partial( 'partials/menu' ); ?>
 
 <header class="site-head">
+    <div class="bg-image" id="parallax"></div>
     <div class="vertical overlay">
         <div class="site-head-content inner">
             <a class="mobile-burger" id="mobile-burger" href="javascript:;" data-state="off">
@@ -18,10 +19,11 @@
     </div>
 </header>
 
-<main class="content column" role="main">
+<main class="home content" role="main">
+    <section class="column">
+        <aside class="post-caption-wrapper">
+            <div class="post-caption">
 
-    <aside class="home post-caption-wrapper">
-        <div class="post-caption">
 <?php /*
             <div class="categories home-slice">
                 <h3>Posts by Category</h3>
@@ -40,66 +42,67 @@
 
 <?php */ ?>
 
-            <div class="categories home-slice">
-                <h3>Blog Search</h3>
-                <span>Enter a tag, author, or topic here to search:</span>
-                <input type="text" class="search" id="search-query" />
-                <a class="blue button" href="javascript:;" id="search-submit">Search</a>
+                <div class="categories home-slice">
+                    <h3>Blog Search</h3>
+                    <span>Enter a tag, author, or topic here to search:</span>
+                    <input type="text" class="search" id="search-query" />
+                    <a class="blue button" href="javascript:;" id="search-submit">Search</a>
+                </div>
+
+                <div class="subscribe">
+                    <h3>Subscribe by Email</h3>
+                    <span>We'll email you when there are new posts here.</span>
+                    <a href="javascript:;" 
+                       class="gray button subscribe-button" 
+                       id="subscribe-button">Subscribe to LaunchPad</a>
+                    <form action="http://teachboost.us4.list-manage.com/subscribe/post?u=bb91eae94006986230e4e46f0&amp;id=016c3a4dba" 
+                          method="post" 
+                          id="mc-embedded-subscribe-form" 
+                          name="mc-embedded-subscribe-form" 
+                          class="validate" 
+                          style="display:none;" novalidate>
+                        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email address" style="margin: 10px 0 5px; width: 175px;" required>
+                        <!-- real people should not fill this in and expect good things
+                             do not remove this or risk form bot signups -->
+                        <div style="position: absolute; left: -5000px;">
+                            <input type="text" name="b_bb91eae94006986230e4e46f0_016c3a4dba" value="">
+                        </div>
+                        <div class="clear">
+                            <input type="submit" value="Subscribe!" name="subscribe" id="mc-embedded-subscribe" class="blue button fontsize-15" />
+                        </div>
+                    </form>
+                </div>
             </div>
+        </aside>
 
-            <div class="subscribe">
-                <h3>Subscribe by Email</h3>
-                <span>We'll email you when there are new posts here.</span>
-                <a href="javascript:;" 
-                   class="gray button subscribe-button" 
-                   id="subscribe-button">Subscribe to LaunchPad</a>
-                <form action="http://teachboost.us4.list-manage.com/subscribe/post?u=bb91eae94006986230e4e46f0&amp;id=016c3a4dba" 
-                      method="post" 
-                      id="mc-embedded-subscribe-form" 
-                      name="mc-embedded-subscribe-form" 
-                      class="validate" 
-                      style="display:none;" novalidate>
-                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email address" style="margin: 10px 0 5px; width: 175px;" required>
-                    <!-- real people should not fill this in and expect good things
-                         do not remove this or risk form bot signups -->
-                    <div style="position: absolute; left: -5000px;">
-                        <input type="text" name="b_bb91eae94006986230e4e46f0_016c3a4dba" value="">
-                    </div>
-                    <div class="clear">
-                        <input type="submit" value="Subscribe!" name="subscribe" id="mc-embedded-subscribe" class="blue button fontsize-15" />
-                    </div>
-                </form>
+<?php   foreach ( $posts as $post ):
+            if ( $post->status == "published" ):
+                $cat_icon = category_icon( $post->getCategory()->slug ); ?>
+
+        <article class="preview">
+            <div class="preview-icon <?php echo $cat_icon[1] ?> circle">
+                <i class="fa <?php echo $cat_icon[0] ?>"></i>
             </div>
-        </div>
-    </aside>
+            <header class="post-header">
+                <h2 class="post-title">
+                    <a href="<?php echo $post->getPath(); ?>">
+                        <?php echo $post->title; ?>
+                    </a>
+                </h2>
+                <span class="post-meta">
+                    <?php echo date( 'l, F jS, Y', strtotime( $post->post_date ) ); ?>
+                </span>
+            </header>
+            <section class="post-excerpt">
+                <p>
+                    <?php echo $post->excerpt; ?>
+                    <!--<a class="read-more" href="<?php echo $post->getPath(); ?>"> More&rarr;</a>-->
+                </p>
+            </section>
+        </article>
 
-<?php   foreach ( $posts as $post ): ?>
-<?php       if ( $post->status == "published" ): ?>
-<?php           $cat_icon = category_icon( $post->getCategory()->slug ); ?>
+<?php       endif;
+        endforeach; ?>
 
-    <article class="preview">
-        <div class="preview-icon <?php echo $cat_icon[1] ?> circle">
-            <i class="fa <?php echo $cat_icon[0] ?>"></i>
-        </div>
-        <header class="post-header">
-            <h2 class="post-title">
-                <a href="<?php echo $post->getPath(); ?>">
-                    <?php echo $post->title; ?>
-                </a>
-            </h2>
-            <span class="post-meta">
-                <?php echo date( 'l, F jS, Y', strtotime( $post->post_date ) ); ?>
-            </span>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                <?php echo $post->excerpt; ?>
-                <!--<a class="read-more" href="<?php echo $post->getPath(); ?>"> More&rarr;</a>-->
-            </p>
-        </section>
-    </article>
-
-<?php       endif; ?>
-<?php   endforeach; ?>
-
+    </section>
 </main>
