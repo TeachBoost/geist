@@ -37,7 +37,7 @@ class Posts extends \Base\Model
     {
         return \Db\Sql\Posts::query()
             ->where( 'is_deleted = 0' )
-            ->orderBy( 'created_at desc' )
+            ->orderBy( 'post_date desc' )
             ->limit( $limit, $offset )
             ->execute();
     }
