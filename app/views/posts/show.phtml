@@ -1,3 +1,4 @@
+<?php   $this->partial( 'partials/menu', array( 'post' => TRUE ) ); ?>
 
 <main class="content" role="main">
 
@@ -5,8 +6,6 @@
 <?php   $this->partial( 'partials/caption' ); ?>
 
     <article class="post">
-
-<?php   $this->partial( 'partials/sideboard' ); ?>
 
         <h1 class="post-title">
             <?php echo $post->title; ?>
@@ -24,6 +23,8 @@
             <strong><?php echo $post->getAuthor()->name; ?></strong><br />
             <span class="title"><?php echo $post->getAuthor()->bio; ?></span>
         </section>
+
+<?php   $this->partial( 'partials/sideboard' ); ?>
 
         <section class="comments">
             <div id="disqus_thread"></div>

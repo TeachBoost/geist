@@ -74,6 +74,10 @@ section.mobile-menu {
         padding: 0;
     }
 
+        section.mobile-menu.post ul {
+            border-bottom: 4px solid #111;
+        }
+
     section.mobile-menu li {
         border-bottom: 3px solid #585858;
         margin: 0;
@@ -242,124 +246,4 @@ article.preview {
 .post-caption input:focus {
     border: 1px solid #007db6;
     outline: none;
-}
-
-
-/*
- * Small screens (using iphone max width) */
-
-@media only screen and (max-width : 568px) { 
-
-    header.site-head {
-        height: 40%;
-        margin: 0 0 25px;
-        max-height: 250px;
-        min-height: 200px;
-    }
-
-        header.site-head .blog-logo img {
-            margin: 15px 0 0;
-        }
-
-        h1.blog-title {
-            font-size: 30px;
-            margin: 20px 0;
-        }
-
-        h2.blog-description {
-            font-size: 17px;
-            padding: 12px 10px 14px;
-            width: auto;
-            border-radius: 0;
-            -moz-border-radius: 0;
-            -webkit-border-radius: 0;
-        }
-
-        h2.blog-description span {
-            display: inline;
-        }
-
-    .column {
-        width: auto;
-    }
-
-    article.preview {
-        margin-bottom: 35px;
-        padding: 0;
-        width: auto;
-    }
-
-        article.preview .preview-icon {
-            float: right;
-            margin: 0 10px;
-        }
-
-        article.preview .post-title {
-            font-size: 19px;
-            min-height: 60px;
-            line-height: 1.4em;
-            margin: 0 10px 0 0;
-            padding: 0;
-        }
-
-        article.preview .post-meta {
-            font-size: 13px;
-        }
-
-        article.preview .post-header, 
-        article.preview .post-excerpt {
-            margin-left: 10px;
-        }
-
-        article.preview .post-excerpt p {
-            font-size: 15px;
-            line-height: 1.5em;
-            margin: 10px 0;
-        }
-
-    aside.post-caption-wrapper {
-        display: none;
-    }
-
-    footer.site-footer {
-        padding: 25px 10px 0;
-    }
-
-        footer.site-footer .logo {
-            padding-bottom: 20px;
-        }
-
-        footer.site-footer h4 {
-            margin-bottom: 10px;
-        }
-
-        footer.site-footer .learnmore,
-        footer.site-footer .solutions,
-        footer.site-footer .copyright {
-            clear: left;
-            float: none;
-            padding-bottom: 20px;
-            width: auto;
-        }
-
-        footer.site-footer a.item {
-            display: inline;
-            margin: 0 10px 0 0;
-        }
-
-        footer.site-footer p {
-            font-size: 13px;
-        }
-
-    /* Mobile Drawer */
-
-    .mobile-burger,
-    .mobile-burger:hover {
-        color: #fff;
-        display: block;
-        font-size: 22px;
-        padding: 5px 0 0 10px;
-        position: absolute;
-    }
-
 }

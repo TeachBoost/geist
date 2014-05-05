@@ -41,6 +41,10 @@ aside.post-caption-wrapper {
     width: 200px;
 }
 
+    aside.post-caption-wrapper.post {
+        top: 0;
+    }
+
     .post-caption {
         line-height: 1.5em;
     }
