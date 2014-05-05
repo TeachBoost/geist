@@ -115,6 +115,7 @@ section.mobile-menu {
 
 main.home {
     background: #fff;
+    padding-bottom: 30px;
     padding-top: 35px;
     position: relative;
     z-index: 2;

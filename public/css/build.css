@@ -15,7 +15,7 @@ main{min-height:350px;position:relative}
 .column{margin:0 auto;width:920px}
 .page{margin:25px auto 60px;width:960px}
 .error-page{margin:25px auto 120px;width:960px}
-footer.site-footer{background:#f9f9f9;border-top:4px solid #ddd;clear:both;margin-top:30px;padding:25px 0 30px;text-shadow:0 1px 0 #fff}
+footer.site-footer{background:#f9f9f9;border-top:4px solid #ddd;clear:both;padding:25px 0 30px;position:relative;text-shadow:0 1px 0 #fff;z-index:2}
 footer.site-footer .inner,footer.site-footer p{font-size:15px;line-height:1.4em}
 footer.site-footer h4{font-size:18px}
 footer.site-footer a.item{display:block;margin-bottom:1px}
@@ -171,7 +171,7 @@ section.mobile-menu li:last-child{border:none}
 section.mobile-menu a{color:#fff;display:block;padding:6px 10px}
 section.mobile-menu a:hover{background:#282828;color:#fff}
 .mobile-burger{display:none}
-main.home{background:#fff;padding-top:35px;position:relative;z-index:2}
+main.home{background:#fff;padding-bottom:30px;padding-top:35px;position:relative;z-index:2}
 main.home section{position:relative}
 nav.header-nav{float:right}
 nav.header-nav ul{margin:0}
