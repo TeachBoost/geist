@@ -220,8 +220,8 @@ nav .menu a {
  * Post list */
 
 article.preview {
-    margin: 0 0 20px;
-    padding: 0 0 15px;
+    margin: 0 0 10px;
+    padding: 0 0 10px;
 }
 
     article.preview:last-child {
