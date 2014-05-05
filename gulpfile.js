@@ -39,7 +39,7 @@ gulp.task( 'build-js', function () {
         './public/js/vendor/jquery.js',
         './public/js/vendor/jquery.scrollTo.js',
         './public/js/vendor/jquery.timepicker.js',
-        './public/js/vendor/pickaday.js',
+        './public/js/vendor/pikaday.js',
         './public/js/vendor/jquery.pikaday.js',
         './public/js/vendor/underscore.js',
         './public/js/vendor/markdown.js'

@@ -124,8 +124,6 @@ footer.site-footer .blog-logo{color:#484848;font-family:Signika,"Trebuchet MS",T
 .h150px{height:150px}
 .h200px{height:200px}
 .h250px{height:250px}
-input{border:1px solid #aaa;color:#333;font-size:15px;height:34px;padding:0 10px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px}
-input:focus{border:1px solid #007db6;outline:0}
 fieldset label{display:block;margin:0 0 8px;font-size:15px;color:#777;padding:0 0 0 2px}
 fieldset input[type=password],fieldset input[type=text],fieldset textarea{padding:8px 10px;font-size:16px;background-color:#fff;border-color:#d3d3d3 #d3d3d3 #bbb;border-image:none;border-style:solid;border-width:1px;box-shadow:0 1px 3px #d3d3d3;color:#333;border-radius:2px}
 a.button,input.button{border-radius:3px;border-top-width:0;border-left-width:0;border-right-width:0;border-bottom-width:2px;border-style:solid;padding:5px 10px;cursor:pointer;text-decoration:none}
@@ -182,6 +180,8 @@ article.preview .post-excerpt,article.preview .post-header{margin-left:64px}
 article.preview .post-meta{color:#888}
 article.preview .post-title{font-size:28px;margin-bottom:8px;padding:5px 0 0}
 article.preview .post-excerpt p{font-size:16px;line-height:1.7em}
+.post-caption input{border:1px solid #aaa;color:#333;font-size:15px;height:34px;padding:0 10px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px}
+.post-caption input:focus{border:1px solid #007db6;outline:0}
 section.post-header-wrapper{background:#f9f9f9;padding:0 0 40px}
 .post-header .blog-logo{color:#333;font-family:Signika,"Trebuchet MS",Tahoma,Verdana,Arial,Helvetica,sans-serif;font-size:28px}
 .post-header .logomark{position:relative;top:24px}
