@@ -124,7 +124,7 @@ footer.site-footer .blog-logo{color:#484848;font-family:Signika,"Trebuchet MS",T
 .h150px{height:150px}
 .h200px{height:200px}
 .h250px{height:250px}
-input[type=email],input[type=text],select,textarea{border:1px solid #aaa;color:#333;font-size:15px;height:34px;padding:0 10px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px}
+input[type=email],input[type=password],input[type=text],select,textarea{border:1px solid #aaa;color:#333;font-size:15px;height:34px;padding:0 10px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px}
 select{height:40px}
 input[type=radio]{position:relative;top:-1px}
 input:focus{border:1px solid #007db6;outline:0}
@@ -197,7 +197,6 @@ article.preview .post-excerpt,article.preview .post-header{margin-left:64px}
 article.preview .post-meta{color:#888}
 article.preview .post-title{font-size:28px;margin-bottom:8px;padding:5px 0 0}
 article.preview .post-excerpt p{font-size:16px;line-height:1.7em}
-.post-caption input{border:1px solid #aaa;color:#333;font-size:15px;height:34px;padding:0 10px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px}
 .post-caption input:focus{border:1px solid #007db6;outline:0}
 section.post-header-wrapper{background:#f9f9f9;padding:0 0 40px}
 .post-header .blog-logo{color:#333;font-family:Signika,"Trebuchet MS",Tahoma,Verdana,Arial,Helvetica,sans-serif;font-size:28px}
@@ -225,7 +224,7 @@ aside.post-caption-wrapper.post{top:0}
 .share{margin:0 auto;width:140px!important}
 article{margin:0 auto;padding-right:250px;position:relative;width:670px}
 .title,time.post-date{color:#888}
-section.byline{border-left:4px solid #ddd;line-height:1.7em;margin:25px 0 30px;padding:0 0 0 15px}
+blockquote,section.byline{border-left:4px solid #ddd;line-height:1.7em;margin:25px 0 30px;padding:0 0 0 15px}
 section.comments{padding:25px 0 30px}
 section.post-content h2{margin:25px 0 15px;color:#666}
 section.post-content p img{max-width:670px;border:1px solid #ccc;box-shadow:0 2px 2px -1px #ddd;border-radius:3px;padding:3px}
