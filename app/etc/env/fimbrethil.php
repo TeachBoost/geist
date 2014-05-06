@@ -5,9 +5,9 @@ return array(
         'environment' => 'production' ),
 
     'paths' => array(
-        'baseUri' => 'http://blog.teachboost.net/',
-        'assetUri' => 'http://blog.teachboost.net/',
-        'hostname' => 'blog.teachboost.net' ),
+        'baseUri' => 'http://blog.teachboost.com/',
+        'assetUri' => 'http://blog.teachboost.com/',
+        'hostname' => 'blog.teachboost.com' ),
 
     'profiling' => array(
         'system' => FALSE,
