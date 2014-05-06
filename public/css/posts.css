@@ -129,7 +129,8 @@ time.post-date,
     color: #888;
 }
 
-section.byline {
+section.byline,
+blockquote {
     border-left: 4px solid #ddd;
     line-height: 1.7em;
     margin: 25px 0 30px;
