@@ -20,8 +20,8 @@ header.site-head .bg-image {
     background-repeat: no-repeat;
     background-size: cover;
     position: fixed;
-    height: 450px;
     top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
     z-index: 1;
