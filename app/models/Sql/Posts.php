@@ -141,6 +141,15 @@ class Posts extends \Base\Model
             '380' );
         $html = preg_replace( "/\[\#vimeo:(.*?)\]/", $vimeoEmbed, $html );
 
+        // process any soundcloud links
+        $soundcloudEmbed = sprintf(
+            '<iframe width="100%" height="450" scrolling="no" frameborder="no" '.
+                'src="%s/%s%s"></iframe>',
+            'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks',
+            '$1', // preg variable of cloud ID
+            '&amp;auto_play=false&amp;hide_related=false&amp;visual=true' );
+        $html = preg_replace( "/\[\#soundcloud:(.*?)\]/", $soundcloudEmbed, $html );
+
         // process any images
         $img = '<img src="$1" alt="" title="" />';
         $html = preg_replace( "/\[\#image:(.*?)\]/", $img, $html );
