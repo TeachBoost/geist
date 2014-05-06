@@ -8,10 +8,11 @@ var MainPage = {
     subscribeButton: function () {
         var $button = $( '#subscribe-button' ),
             $form = $( '#mc-embedded-subscribe-form' );
-
+        $button.show();
         $button.on( 'click', function() {
             $button.hide();
             $form.show();
+            $form.find( 'input[type="email"]' ).focus();
             return false;
         });
     },
