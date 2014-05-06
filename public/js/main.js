@@ -55,7 +55,7 @@ var MainPage = {
         var $window = $( window );
         $window.on( 'scroll', function () {
             var scrollTop = $window.scrollTop(),
-                width = $window.width(),
+                width = $window.width();
             if ( width >= 600 ) return;
             $bgImage.css( 'top', -1 * scrollTop * 0.2 );
         });
