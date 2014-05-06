@@ -18,7 +18,8 @@ gulp.task( 'build-css', function () {
         './public/css/admin.css',
         './public/css/font-awesome.css',
         './public/css/pikaday.css',
-        './public/css/timepicker.css'
+        './public/css/timepicker.css',
+        './public/css/media.css'
     ];
 
     var opts = {

@@ -695,3 +695,38 @@ h2.with-nav a{font-weight:400;text-decoration:none;margin-right:20px}
 .ui-timepicker-list li:hover .ui-timepicker-duration,li.ui-timepicker-selected .ui-timepicker-duration{color:#ccc}
 .ui-timepicker-list li.ui-timepicker-disabled,.ui-timepicker-list li.ui-timepicker-disabled:hover,.ui-timepicker-list li.ui-timepicker-selected.ui-timepicker-disabled{color:#888;cursor:default}
 .ui-timepicker-list li.ui-timepicker-disabled:hover,.ui-timepicker-list li.ui-timepicker-selected.ui-timepicker-disabled{background:#f2f2f2}
+@media only screen and (max-width :568px){header.site-head{height:40%;margin:0 0 25px;max-height:250px;min-height:200px}
+header.site-head .blog-logo img{margin:15px 0 0}
+h1.blog-title{font-size:30px;margin:20px 0}
+h2.blog-description{font-size:17px;padding:12px 10px 14px;width:auto;border-radius:0;-moz-border-radius:0;-webkit-border-radius:0}
+h2.blog-description span{display:inline}
+nav.header-nav{display:none}
+section.post-header-wrapper{padding:0 0 10px}
+section.blog-caption-wrapper{margin-bottom:20px}
+article.post header.post-header{height:15px}
+header.post-header .blog-logo{display:block;margin-left:10px}
+header.post-header .logomark{width:23px;height:34px;top:10px}
+header.post-header .logotext{font-size:22px;top:0}
+.blog-caption{padding:0 10px}
+.column{width:auto}
+article.post{padding:0 10px;width:auto}
+article.preview{margin-bottom:35px;padding:0;width:auto}
+article.preview .preview-icon{float:right;margin:0 10px}
+article.preview .post-title{font-size:19px;min-height:60px;line-height:1.4em;margin:0 10px 0 0;padding:0}
+article.preview .post-meta{font-size:13px}
+article.preview .post-excerpt,article.preview .post-header{margin-left:10px}
+article.preview .post-excerpt p{font-size:15px;line-height:1.5em;margin:10px 0}
+section.byline{margin-bottom:40px}
+aside.post-caption-wrapper.home{display:none}
+aside.post-caption-wrapper.post{background:#eee;height:48px;margin:0 -10px;padding:12px 10px;position:relative;width:auto}
+aside.post-caption-wrapper.post .more{padding:0 0 5px!important}
+aside.post-caption-wrapper.post .subscribe{display:none}
+aside.post-caption-wrapper.post .share{width:250px!important;margin:0}
+footer.site-footer{padding:25px 10px 0}
+footer.site-footer .logo{padding-bottom:20px}
+footer.site-footer h4{margin-bottom:10px}
+footer.site-footer .copyright,footer.site-footer .learnmore,footer.site-footer .solutions{clear:left;float:none;padding-bottom:20px;width:auto}
+footer.site-footer a.item{display:inline;margin:0 10px 0 0}
+footer.site-footer p{font-size:13px}
+.mobile-burger,.mobile-burger:hover{color:#fff;display:block;font-size:22px;padding:5px 10px 10px;position:absolute;right:0}
+.mobile-burger.post{color:#333;padding-top:14px}}
