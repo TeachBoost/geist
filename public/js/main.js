@@ -8,10 +8,11 @@ var MainPage = {
     subscribeButton: function () {
         var $button = $( '#subscribe-button' ),
             $form = $( '#mc-embedded-subscribe-form' );
-
+        $button.show();
         $button.on( 'click', function() {
             $button.hide();
             $form.show();
+            $form.find( 'input[type="email"]' ).focus();
             return false;
         });
     },
@@ -54,7 +55,9 @@ var MainPage = {
 
         var $window = $( window );
         $window.on( 'scroll', function () {
-            var scrollTop = $window.scrollTop();
+            var scrollTop = $window.scrollTop(),
+                width = $window.width();
+            if ( width < 600 ) return;
             $bgImage.css( 'top', -1 * scrollTop * 0.2 );
         });
     }

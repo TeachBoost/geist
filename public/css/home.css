@@ -75,6 +75,8 @@ section.mobile-menu {
     background: #333;
     color: #fff;
     display: none;
+    position: relative;
+    z-index: 2;
 }
 
     section.mobile-menu ul {
