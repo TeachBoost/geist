@@ -1,7 +1,7 @@
 /*
  * Small screens (using iphone max width) */
 
-@media only screen and (max-width : 568px) { 
+@media only screen and (max-width : 568px) {
 
     /* Main Header */
 
@@ -38,16 +38,16 @@
     section.post-header-wrapper { padding: 0 0 10px; }
     section.blog-caption-wrapper { margin-bottom: 20px; }
 
-    article.post header.post-header { 
+    article.post header.post-header {
         height: 15px; }
-    header.post-header .blog-logo { 
-        display: block; 
+    header.post-header .blog-logo {
+        display: block;
         margin-left: 10px ;}
-    header.post-header .logomark { 
+    header.post-header .logomark {
         width: 23px;
         height: 34px;
         top: 10px; }
-    header.post-header .logotext { 
+    header.post-header .logotext {
         font-size: 22px;
         top: 0px; }
 
@@ -85,7 +85,7 @@
             font-size: 13px;
         }
 
-        article.preview .post-header, 
+        article.preview .post-header,
         article.preview .post-excerpt {
             margin-left: 10px;
         }
@@ -111,7 +111,7 @@
     aside.post-caption-wrapper.post .more { padding: 0 0 5px !important; }
 
     aside.post-caption-wrapper.post .subscribe { display: none; }
-    aside.post-caption-wrapper.post .share { width: 250px !important; margin: 0; } 
+    aside.post-caption-wrapper.post .share { width: 250px !important; margin: 0; }
     footer.site-footer { padding: 25px 10px 0; }
 
         footer.site-footer .logo { padding-bottom: 20px; }
