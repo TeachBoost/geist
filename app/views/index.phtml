@@ -28,11 +28,12 @@
         endif; ?>
 
 <?php   if ( $this->config->app->environment == 'production' ): ?>
-    <script src="<?php echo $this->url->get( 'js/dist/build.js' ); ?>"></script>
+    <script src="<?php echo $this->url->get( 'js/dist/build.js?v='. $this->config->app->assetVersion ); ?>"></script>
+    <script type="text/javascript" src="<?php echo $this->url->get( 'js/main.js?v='. $this->config->app->assetVersion ); ?>"></script>
 <?php   else: ?>
     <script src="<?php echo $this->url->get( 'js/vendor/jquery.js' ); ?>"></script>
-<?php   endif; ?>
     <script type="text/javascript" src="<?php echo $this->url->get( 'js/main.js' ); ?>"></script>
+<?php   endif; ?>
 
 </body>
 </html>

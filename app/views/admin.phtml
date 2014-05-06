@@ -27,7 +27,8 @@
 
     <!-- Javascripts -->
 <?php   if ( $this->config->app->environment == 'production' ): ?>
-    <script src="<?php echo $this->url->get( 'js/dist/build.js' ); ?>"></script>
+    <script src="<?php echo $this->url->get( 'js/dist/build.js?v='. $this->config->app->assetVersion ); ?>"></script>
+    <script src="<?php echo $this->url->get( 'js/admin.js?v='. $this->config->app->assetVersion ); ?>"></script>
 <?php   else: ?>
     <script src="<?php echo $this->url->get( 'js/vendor/jquery.js' ); ?>"></script>
     <script src="<?php echo $this->url->get( 'js/vendor/markdown.js' ); ?>"></script>
@@ -35,8 +36,8 @@
     <script src="<?php echo $this->url->get( 'js/vendor/pikaday.js' ); ?>"></script>
     <script src="<?php echo $this->url->get( 'js/vendor/jquery.pikaday.js' ); ?>"></script>
     <script src="<?php echo $this->url->get( 'js/vendor/jquery.timepicker.js' ); ?>"></script>
-<?php   endif; ?>
     <script src="<?php echo $this->url->get( 'js/admin.js' ); ?>"></script>
+<?php   endif; ?>
 
 </body>
 </html>
