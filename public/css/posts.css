@@ -139,3 +139,17 @@ section.byline {
 section.comments {
     padding: 25px 0 30px;
 }
+
+section.post-content h2 {
+    margin: 25px 0 15px;
+    color: #666;
+}
+
+section.post-content p img {
+    max-width: 670px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 2px -1px #ddd;
+    border-radius: 3px;
+    padding: 3px;
+    }
+}
