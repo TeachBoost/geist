@@ -146,10 +146,10 @@ class Posts extends \Base\Model
             '<iframe width="%s" height="%s" scrolling="no" frameborder="no" '.
                 'src="%s/%s%s"></iframe>',
             '100%',
-            '450',
+            '166',
             'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks',
             '$1', // preg variable of cloud ID
-            '&amp;auto_play=false&amp;hide_related=false&amp;visual=true' );
+            '&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_artwork=true' );
         $html = preg_replace( "/\[\#soundcloud:(.*?)\]/", $soundcloudEmbed, $html );
 
         // process any images

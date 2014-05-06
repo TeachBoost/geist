@@ -178,6 +178,7 @@ function category_icon( $slug = 'default' )
                     'technology' => array( 'fa-mobile', 'purple' ),
                     'webinars' => array( 'fa-desktop', 'orange' ),
                     'ilc' => array( 'fa-trophy', 'orange' ),
+                    'spotlights' => array( 'fa-lightbulb-o', 'green' ),
                     'default' => array( 'fa-file-text-o', 'blue' )
                 );
 
