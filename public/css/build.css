@@ -141,6 +141,8 @@ a.button,input.button{border-radius:3px;border-top-width:0;border-left-width:0;b
 .button.green:hover{background:#2b8c2b;border-bottom-color:#166616}
 .button.red{background:#af362b;border-bottom-color:#932820;color:#fff}
 .button.red:hover{background:#932820;border-bottom-color:#6b1a14}
+.button.orange{background:#d1712d;border-bottom-color:#a65a23;color:#fff}
+.button.orange:hover{background:#a65a23;border-bottom-color:#8b430e}
 .button.gray{background:#ccc;border-bottom-color:#999;color:#444}
 .button.gray:hover{background:#bbb;border-bottom-color:#888;color:#333}
 .button.black{background:#333;border-bottom-color:#111;color:#eee}
@@ -220,6 +222,7 @@ aside.post-caption-wrapper.post{top:0}
 .orange.circle{background:#d1712d}
 .bottom{padding-bottom:30px}
 .subscribe-button{display:inline-block;margin:10px 0 30px;padding:4px 10px!important}
+.subscribe-button.home{margin-bottom:10px}
 .categories{padding:12px 0 40px;text-align:center}
 .post-caption .search{margin-top:10px;width:100px;height:28px;top:1px;position:relative}
 .subscribe{text-align:center}
