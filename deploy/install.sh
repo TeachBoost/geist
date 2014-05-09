@@ -57,7 +57,7 @@ if [[ -f "${apppath}/etc/secret.ini" ]] ; then
         IFS='=' read -ra ARR <<< "$line"
         find=${ARR[0]}
         replace=${ARR[1]}
-        sed -i "s/##${ARR[0]}##/${ARR[1]}/g" ${apppath}/etc/config.local.php
+        sed -i "s/##${find}##/${replace}/g" ${apppath}/etc/config.local.php
     done < "${apppath}/etc/secret.ini"
 else
     touch "${apppath}/etc/secret.ini"

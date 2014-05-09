@@ -3,8 +3,6 @@
 namespace Lib\Bootstrap;
 
 use Phalcon\Mvc\Application,
-    Phalcon\Mvc\View,
-    Phalcon\Mvc\Dispatcher,
     Phalcon\Loader as Loader;
 
 class App extends \Lib\Bootstrap\Base
@@ -74,57 +72,5 @@ class App extends \Lib\Bootstrap\Base
             error_reporting( 0 );
             ini_set( 'display_errors', 0 );
         endif;
-    }
-
-    protected function initView()
-    {
-        $config = $this->di[ 'config' ];
-
-        $this->di->set(
-            'view', 
-            function () use ( $config ) {
-                $view = new View();
-                $view->setViewsDir( APP_PATH .'/views/' );
-                return $view;
-            },
-            TRUE );
-    }
-
-    protected function initDispatcher()
-    {
-        $eventsManager = $this->di[ 'eventsManager' ];
-
-        $this->di->set(
-            'dispatcher',
-            function () use ( $eventsManager ) {
-                // create the default namespace
-                //
-                $dispatcher = new Dispatcher();
-                $dispatcher->setDefaultNamespace( 'Controllers' );
-
-                // set up our error handler
-                //
-                $eventsManager->attach(
-                    'dispatch:beforeException',
-                    function ( $event, $dispatcher, $exception ) {
-                        switch ( $exception->getCode() )
-                        {
-                            case Dispatcher::EXCEPTION_HANDLER_NOT_FOUND:
-                            case Dispatcher::EXCEPTION_ACTION_NOT_FOUND:
-                                $dispatcher->forward(
-                                    array(
-                                        'namespace' => 'Controllers',
-                                        'controller' => 'error',
-                                        'action' => 'show404'
-                                    ));
-                                return FALSE;
-                        }
-                    });
-
-                $dispatcher->setEventsManager( $eventsManager );
-
-                return $dispatcher;
-            },
-            TRUE );
     }
 }

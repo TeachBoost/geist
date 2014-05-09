@@ -1,18 +1,19 @@
 @charset "UTF-8";
 html{height:100%;max-height:100%}
 body{font-family:"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:15px;height:auto;margin:0;padding:0;color:#333;width:100%}
-body.home{height:100%;max-height:100%}
+body.home{height:100%;max-height:100%;background:#f9f9f9}
 h1,h2,h3,h4{font-family:Signika,"Trebuchet MS",Tahoma,Verdana,Arial,Helvetica,sans-serif;font-weight:400;margin:0 0 15px}
 h1{font-size:32px;line-height:1.1em}
 li,p{line-height:1.6em}
+p{margin:0}
 li{margin-bottom:5px}
 a,a:active,a:visited{color:#007db6;text-decoration:none}
 a:hover{color:#111}
 fieldset{border:none;padding:15px;background:#f1f1f1;border-radius:2px;box-shadow:0 1px 2px #aaa}
 fieldset legend h2{font-family:Signika,"Trebuchet MS",Tahoma,Verdana,Arial,Helvetica,sans-serif;text-transform:uppercase;font-size:18px;padding:8px 10px 5px;background:#e1e1e1}
 .sans{font-family:"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,"Helvetica Neue",Helvetica,Arial,sans-serif}
-main{min-height:350px;position:relative}
-.column{margin:0 auto;width:920px}
+main{background:#fff;min-height:350px;position:relative}
+.column{margin:0 auto;width:920px;position:relative}
 .page{margin:25px auto 60px;width:960px}
 .error-page{margin:25px auto 120px;width:960px}
 footer.site-footer{background:#f9f9f9;border-top:4px solid #ddd;clear:both;padding:25px 0 30px;position:relative;text-shadow:0 1px 0 #fff;z-index:2}
@@ -203,6 +204,7 @@ section.post-header-wrapper{background:#f9f9f9;padding:0 0 40px}
 .post-header .logomark{position:relative;top:24px}
 .post-header .logotext{left:4px;position:relative;top:10px}
 section.blog-caption-wrapper{background:#fff;border-top:4px solid #359fa3;border-bottom:2px solid #fff;color:#484848;margin-bottom:30px;padding:12px 0;width:100%;z-index:1}
+section.post-excerpt{padding:10px 0 5px}
 aside.post-caption-wrapper{position:absolute;right:0;width:200px}
 aside.post-caption-wrapper.post{top:0}
 .post-caption{line-height:1.5em}
@@ -228,6 +230,7 @@ blockquote,section.byline{border-left:4px solid #ddd;line-height:1.7em;margin:25
 section.comments{padding:25px 0 30px}
 section.post-content h2{margin:25px 0 15px;color:#666}
 section.post-content p img{max-width:670px;border:1px solid #ccc;box-shadow:0 2px 2px -1px #ddd;border-radius:3px;padding:3px}
+.pagination a{display:inline-block;margin:0 1px}
 body.admin{padding-top:64px}
 #admin.page{width:auto;margin:auto;padding:50px 25px 25px;max-width:1400px}
 #admin-header{background:#e9e9e9;position:fixed;width:100%;height:65px;top:0;border-bottom:4px solid #359fa3;z-index:1}

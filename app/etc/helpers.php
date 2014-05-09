@@ -165,27 +165,20 @@ function date_str( $datetime, $format = DATE_TABLE, $nullOnEmpty = FALSE )
 }
 
 /**
- * Category icons array
+ * Returns a human readable stack trace from an exception
  */
-function category_icon( $slug = 'default' )
+function get_stack_trace( $exception )
 {
-    $icons = array( 'events' => array( 'fa-calendar', 'red' ),
-                    'news' => array( 'fa-bullhorn', 'blue' ), 
-                    'release-notes' => array( 'fa-file-text-o', 'teal' ),
-                    'product-updates' => array( 'fa-bookmark', 'teal' ),
-                    'tips-tricks' => array( 'fa-magic', 'green' ),
-                    'education' => array( 'fa-book', 'purple' ),
-                    'technology' => array( 'fa-mobile', 'purple' ),
-                    'webinars' => array( 'fa-desktop', 'orange' ),
-                    'ilc' => array( 'fa-trophy', 'orange' ),
-                    'spotlights' => array( 'fa-lightbulb-o', 'green' ),
-                    'default' => array( 'fa-file-text-o', 'blue' )
-                );
-
-    if ( ! $slug || strlen( $slug ) == 0 )
+    if ( ! $exception )
     {
-        return $icons[ 'default' ];
+        return "";
     }
 
-    return $icons[ $slug ];
+    return sprintf(
+        "%s: %s<br>%s",
+        get_class( $exception ),
+        $exception->getMessage(),
+        nl2br(
+            htmlentities( $exception->getTraceAsString() )
+        ));
 }

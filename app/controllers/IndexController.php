@@ -11,10 +11,18 @@ class IndexController extends \Base\Controller
         return parent::beforeExecuteRoute();
     }
 
+    /**
+     * Home page
+     */
     public function indexAction()
     {
+        // get the posts and categories
         $this->view->posts = \Db\Sql\Posts::getActive( 10 );
         $this->view->categories = \Db\Sql\Categories::getAll();
+
+        // get the total count of posts for the pagination
+        $this->view->postCount = \Db\Sql\Posts::getCount();
+
         $this->view->pick( 'home/index' );
     }
 }

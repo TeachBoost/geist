@@ -43,6 +43,15 @@ class Posts extends \Base\Model
     }
 
     /**
+     * Returns the count of active posts
+     */
+    static function getCount()
+    {
+        return \Db\Sql\Posts::count([
+            'is_deleted' => 0 ]);
+    }
+
+    /**
      * Return a post by slug
      *
      * @param string $slug
@@ -77,6 +86,39 @@ class Posts extends \Base\Model
             : new \Db\Sql\Categories();
 
         return $this->category;
+    }
+
+    /**
+     * Retrieves the category icon
+     */
+    function getCategoryIcon()
+    {
+        $icons = [
+            'events' => [ 'fa-calendar', 'red' ],
+            'news' => [ 'fa-bullhorn', 'blue' ],
+            'release-notes' => [ 'fa-file-text-o', 'teal' ],
+            'product-updates' => [ 'fa-bookmark', 'teal' ],
+            'tips-tricks' => [ 'fa-magic', 'green' ],
+            'education' => [ 'fa-book', 'purple' ],
+            'technology' => [ 'fa-mobile', 'purple' ],
+            'webinars' => [ 'fa-desktop', 'orange' ],
+            'ilc' => [ 'fa-trophy', 'orange' ],
+            'spotlights' => [ 'fa-lightbulb-o', 'green' ],
+            'default' => [ 'fa-file-text-o', 'blue' ]];
+        $category = $this->getCategory();
+
+        if ( ! isset( $icons[ $category->slug ] ) )
+        {
+            return new \Base\Object([
+                'class' => $icons[ 'default' ][ 0 ],
+                'color' => $icons[ 'default' ][ 1 ]
+            ]);
+        }
+
+        return new \Base\Object([
+            'class' => $icons[ $category->slug ][ 0 ],
+            'color' => $icons[ $category->slug ][ 1 ]
+        ]);
     }
 
     /**

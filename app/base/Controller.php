@@ -164,6 +164,14 @@ class Controller extends \Phalcon\Mvc\Controller
         $this->messages[] = array( $type => $message );
     }
 
+    public function show404()
+    {
+        return $this->dispatcher->forward([
+            'controller' => 'error',
+            'action' => 'show404',
+            'namespace' => 'Controllers' ]);
+    }
+
     public function quit( $message, $type = SUCCESS, $redirect = NULL, $code = NULL )
     {
         return $this->dispatcher->forward([

@@ -1,27 +1,64 @@
-<?php   $cat_icon = category_icon( $category->slug ); ?>
-
-<aside class="post post-caption-wrapper">
+<aside class="post-caption-wrapper home">
     <div class="post-caption">
-        <div class="<?php echo $cat_icon[1]; ?> circle category-icon">
-            <i class="fa <?php echo $cat_icon[0]; ?>"></i>
+
+<?php /*
+            <div class="categories home-slice">
+                <h3>Posts by Category</h3>
+
+<?php   if ( count( $categories ) > 0 ): ?>
+<?php       $total = count( $categories ); ?>
+<?php       $i = 1; ?>
+<?php       foreach ( $categories as $category ): ?>
+
+                <a href="<?php echo $category->slug; ?>" class="category-link">
+                    <?php echo $category->name; ?>
+                </a> <?php echo ( $i < $total ) ? '&middot;' : ''; ?>
+<?php           $i++; ?>
+<?php       endforeach; ?>
+<?php   endif; ?>
+
+<?php */ ?>
+
+        <div class="categories home-slice">
+            <h3>Blog Search</h3>
+            <span>Enter a tag, author, or topic here to search:</span>
+            <input type="text" class="search" id="search-query" />
+            <a class="blue button" href="javascript:;" id="search-submit">Search</a>
         </div>
-        <div class="more bottom">
-            Read more articles from 
-            <a href="https://www.google.com/#q=site:blog.teachboost.com+<?php echo str_replace(" ", "+", $category->name); ?>"><?php echo $category->name; ?></a>.
-        </div>
-        <div class="subscribe clear">
-            <strong>Like this post?</strong><br />
-            Get updates by email!<br />
+
+        <div class="subscribe">
+            <h3>Subscribe by Email</h3>
+            <span>We'll email you when there are new posts here.</span>
+            <noscript>
+                <form action="http://teachboost.us4.list-manage.com/subscribe/post?u=bb91eae94006986230e4e46f0&amp;id=016c3a4dba" 
+                      method="post" 
+                      id="mc-embedded-subscribe-form" 
+                      name="mc-embedded-subscribe-form" 
+                      class="validate" novalidate>
+                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL"
+                        placeholder="Email address" style="margin: 10px 0 5px; width: 175px;" required>
+                    <!-- real people should not fill this in and expect good things
+                         do not remove this or risk form bot signups -->
+                    <div style="position: absolute; left: -5000px;">
+                        <input type="text" name="b_bb91eae94006986230e4e46f0_016c3a4dba" value="">
+                    </div>
+                    <div class="clear">
+                        <input type="submit" value="Subscribe!" name="subscribe" id="mc-embedded-subscribe" class="blue button fontsize-15" />
+                    </div>
+                </form>
+            </noscript>
             <a href="javascript:;" 
                class="gray button subscribe-button" 
-               id="subscribe-button">Subscribe to LaunchPad</a>
+               id="subscribe-button"
+               style="display:none;">Subscribe to LaunchPad</a>
             <form action="http://teachboost.us4.list-manage.com/subscribe/post?u=bb91eae94006986230e4e46f0&amp;id=016c3a4dba" 
                   method="post" 
                   id="mc-embedded-subscribe-form" 
                   name="mc-embedded-subscribe-form" 
                   class="validate" 
-                  style="display:none; margin-bottom:25px;" novalidate>
-                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email address" style="margin: 10px 0 5px; width: 175px;" required>
+                  style="display:none;" novalidate>
+                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL"
+                    placeholder="Email address" style="margin: 10px 0 5px; width: 175px;" required>
                 <!-- real people should not fill this in and expect good things
                      do not remove this or risk form bot signups -->
                 <div style="position: absolute; left: -5000px;">
@@ -32,15 +69,5 @@
                 </div>
             </form>
         </div>
-        <div class="share addthis_toolbox addthis_default_style">
-            <a class="addthis_button_preferred_1"></a>
-            <a class="addthis_button_preferred_2"></a>
-            <a class="addthis_button_preferred_3"></a>
-            <a class="addthis_button_preferred_4"></a>
-            <a class="addthis_button_compact"></a>
-            <a class="addthis_counter addthis_bubble_style"></a>
-        </div>
-        <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
-        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-535a73cb4ec3e51a"></script>
     </div>
 </aside>

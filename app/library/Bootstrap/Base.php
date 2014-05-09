@@ -8,6 +8,7 @@ use Phalcon\Config as Config,
     Phalcon\DI\FactoryDefault,
     Phalcon\Mvc\Application,
     Phalcon\Mvc\Dispatcher,
+    Phalcon\Mvc\View,
     Phalcon\Mvc\Url as UrlResolver,
     Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
 
@@ -120,6 +121,20 @@ abstract class Base
             TRUE );
     }
 
+    protected function initView()
+    {
+        $config = $this->di[ 'config' ];
+
+        $this->di->set(
+            'view',
+            function () use ( $config ) {
+                $view = new View();
+                $view->setViewsDir( APP_PATH .'/views/' );
+                return $view;
+            },
+            TRUE );
+    }
+
     protected function initUrl()
     {
         $config = $this->di[ 'config' ];
@@ -130,6 +145,53 @@ abstract class Base
                 $url = new UrlResolver();
                 $url->setBaseUri( $config->paths->baseUri );
                 return $url;
+            },
+            TRUE );
+    }
+
+    protected function initDispatcher()
+    {
+        $eventsManager = $this->di[ 'eventsManager' ];
+
+        $this->di->set(
+            'dispatcher',
+            function () use ( $eventsManager ) {
+                // create the default namespace
+                //
+                $dispatcher = new Dispatcher();
+                $dispatcher->setDefaultNamespace( 'Controllers' );
+
+                // set up our error handler
+                //
+                $eventsManager->attach(
+                    'dispatch:beforeException',
+                    function ( $event, $dispatcher, $exception ) {
+                        switch ( $exception->getCode() )
+                        {
+                            case Dispatcher::EXCEPTION_HANDLER_NOT_FOUND:
+                            case Dispatcher::EXCEPTION_ACTION_NOT_FOUND:
+                                $dispatcher->forward([
+                                    'namespace' => 'Controllers',
+                                    'controller' => 'error',
+                                    'action' => 'show404'
+                                    ]);
+                                return FALSE;
+                            default:
+                                $dispatcher->forward([
+                                    'namespace' => 'Controllers',
+                                    'controller' => 'error',
+                                    'action' => 'show500',
+                                    'params' => [
+                                        NULL, // responseMode
+                                        $exception ]
+                                    ]);
+                                return FALSE;
+                        }
+                    });
+
+                $dispatcher->setEventsManager( $eventsManager );
+
+                return $dispatcher;
             },
             TRUE );
     }
@@ -327,7 +389,7 @@ abstract class Base
             'cache',
             array(
                 'className' => '\Lib\Services\Cache' ),
-            TRUE ); 
+            TRUE );
     }
 
     protected function initValidate()

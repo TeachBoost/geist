@@ -35,6 +35,10 @@ section.blog-caption-wrapper {
     z-index: 1;
 }
 
+section.post-excerpt {
+    padding: 10px 0 5px;
+}
+
 aside.post-caption-wrapper {
     position: absolute;
     right: 0;
@@ -152,5 +156,9 @@ section.post-content p img {
     box-shadow: 0 2px 2px -1px #ddd;
     border-radius: 3px;
     padding: 3px;
-    }
+}
+
+.pagination a {
+    display: inline-block;
+    margin: 0 1px;
 }

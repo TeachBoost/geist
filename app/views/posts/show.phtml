@@ -15,7 +15,7 @@
             Posted on <?php echo date( "l, F jS, Y", strtotime( $post->post_date ) ); ?>
         </time>
 
-        <section class="post-content">
+        <section class="post-content padding-top-15">
             <?php echo $post->getHtmlBody(); ?>
         </section>
 
@@ -24,7 +24,11 @@
             <span class="title"><?php echo $post->getAuthor()->bio; ?></span>
         </section>
 
-<?php   $this->partial( 'partials/sideboard' ); ?>
+<?php   $this->partial(
+            'partials/posts/sideboard',
+            [
+                'post' => $post
+            ]); ?>
 
         <section class="comments">
             <div id="disqus_thread"></div>

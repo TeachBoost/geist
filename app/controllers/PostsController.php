@@ -15,6 +15,36 @@ class PostsController extends \Base\Controller
         return parent::beforeExecuteRoute();
     }
 
+    /**
+     * Present a paginated page of posts
+     *
+     * @param int $number Page number
+     */
+    public function pageAction( $number = "" )
+    {
+        if ( ! valid( $number ) )
+        {
+            return $this->show404();
+        }
+
+        // determine offset
+        $offset = ( $number - 1 ) * 10;
+        $postCount = \Db\Sql\Posts::getCount();
+
+        // get the posts with the page offset
+        $this->view->page = $number;
+        $this->view->offset = $offset;
+        $this->view->posts = \Db\Sql\Posts::getActive( 10, $offset );
+        $this->view->postCount = $postCount;
+        $this->view->totalPages = ceil( $postCount / 10 );
+
+        $this->view->pick( 'posts/page' );
+    }
+
+    /**
+     * Display a particular post. This takes params from a stored
+     * route in the routes file.
+     */
     public function showAction()
     {
         // load the params
@@ -41,6 +71,9 @@ class PostsController extends \Base\Controller
         $this->view->pick( 'posts/show' );
     }
 
+    /**
+     * Render the RSS feed
+     */
     public function rssAction()
     {
         // create the feed
@@ -72,8 +105,12 @@ class PostsController extends \Base\Controller
                 ->appendTo( $channel );
         }
 
-        header( 'Content-Type: application/rss+xml; charset=utf-8' );
-        echo $feed;
+        $response = new \Phalcon\Http\Response();
+        $response->setHeader(
+            'Content-Type',
+            'application/rss+xml; charset=utf-8' );
+        $response->setContent( $feed );
+        $response->send();
         exit;
     }
 }
