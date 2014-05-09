@@ -2,7 +2,8 @@
 
 return array(
     'app' => array(
-        'environment' => 'production' ),
+        'environment' => 'production',
+        'errorReporting' => FALSE ),
 
     'paths' => array(
         'baseUri' => 'http://blog.teachboost.com/',
