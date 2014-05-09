@@ -1,0 +1,21 @@
+
+<?php   $this->partial( 'partials/menu', array( 'post' => TRUE ) ); ?>
+
+<main class="content" role="main">
+
+<?php   $this->partial( 'partials/header' ); ?>
+<?php   $this->partial( 'partials/caption' ); ?>
+
+    <article class="post">
+        <h1>There was a Problem</h1>
+        <p class="padding-bottom-30">
+<?php   if ( $errorReporting ):
+            echo get_stack_trace( $exception );
+        else: ?>
+            Sorry, the application had a hiccup. Please contact TeachBoost
+            if this happens again.
+<?php   endif; ?>
+        </p>
+    </article>
+
+</main>

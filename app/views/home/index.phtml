@@ -24,24 +24,9 @@
 
 <?php   $this->partial( 'partials/sideboard' );
 
-<<<<<<< HEAD
         foreach ( $posts as $post ):
             if ( str_eq( $post->status, "published" ) ):
                 $categoryIcon = $post->getCategoryIcon(); ?>
-=======
-<?php   if ( count( $categories ) > 0 ): ?>
-<?php       $total = count( $categories ); ?>
-<?php       $i = 1; ?>
-<?php       foreach ( $categories as $category ): ?>
-
-                <a href="<?php echo $category->slug; ?>" class="category-link">
-                    <?php echo $category->name; ?>
-                </a> <?php echo ( $i < $total ) ? '&middot;' : ''; ?>
-<?php           $i++; ?>
-<?php       endforeach; ?>
-<?php   endif; ?>
-
-<?php */ ?>
 
                 <div class="categories home-slice">
                     <h3>Blog Search</h3>

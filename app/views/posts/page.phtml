@@ -1,0 +1,54 @@
+<?php   $this->partial( 'partials/menu', array( 'post' => TRUE ) ); ?>
+
+<main class="content padding-bottom-30" role="main">
+
+<?php   $this->partial( 'partials/header' ); ?>
+<?php   $this->partial( 'partials/caption' ); ?>
+
+    <section class="column">
+
+<?php   $this->partial( 'partials/sideboard' ); ?>
+
+        <h2 class="margin-bottom-30">Articles Page <?php echo $page; ?> of <?php echo $totalPages; ?></h2>
+
+<?php   foreach ( $posts as $post ):
+            if ( str_eq( $post->status, "published" ) ):
+                $categoryIcon = $post->getCategoryIcon(); ?>
+
+        <article class="preview">
+            <div class="preview-icon <?php echo $categoryIcon->color; ?> circle">
+                <i class="fa <?php echo $categoryIcon->class; ?>"></i>
+            </div>
+            <header class="post-header">
+                <h2 class="post-title">
+                    <a href="<?php echo $post->getPath(); ?>">
+                        <?php echo $post->title; ?>
+                    </a>
+                </h2>
+                <span class="post-meta">
+                    <?php echo date( 'l, F jS, Y', strtotime( $post->post_date ) ); ?>
+                </span>
+            </header>
+            <section class="post-excerpt">
+                <p>
+                    <?php echo $post->excerpt; ?>
+                </p>
+            </section>
+        </article>
+
+<?php       endif;
+        endforeach;
+
+        // check if there are paginated results
+        if ( $totalPages > 1 ): 
+            // render pagination
+            $this->partial(
+                'partials/posts/pagination',
+                [
+                    'page' => $page,
+                    'totalPages' => $totalPages
+                ]);
+        endif; ?>
+
+    </section>
+</main>

@@ -1,0 +1,32 @@
+
+<?php   // determine the start / ending pages
+        // this is set up in $range
+        $range = range( 1, $totalPages );
+        $adjacents = 8;
+
+        if ( ( $adjacents = floor( $adjacents / 2 ) * 2 + 1 ) >= 1 ):
+            $range = array_slice(
+                $range,
+                max(
+                    0,
+                    min(
+                        count( $range ) - $adjacents,
+                        intval( $page ) - ceil( $adjacents / 2 )
+                    )),
+                $adjacents );
+        endif; ?>
+
+<div class="centered-text pagination padding-top-20 padding-bottom-20">
+
+<?php   foreach ( $range as $pageNum ):
+            $color = ( $page == $pageNum )
+                ? 'blue'
+                : 'gray'; ?>
+
+    <a href="<?php echo $this->url->get( 'posts/page/'. $pageNum ); ?>" class="<?php echo $color; ?> button">
+        <?php echo $pageNum; ?>
+    </a>
+
+<?php   endforeach; ?>
+
+</div>
