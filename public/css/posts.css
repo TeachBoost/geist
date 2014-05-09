@@ -91,6 +91,10 @@ aside.post-caption-wrapper {
         padding: 4px 10px !important;
     }
 
+        .subscribe-button.home {
+            margin-bottom: 10px;
+        }
+
     .categories {
         padding: 12px 0 40px;
         text-align: center;

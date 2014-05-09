@@ -25,6 +25,11 @@ input.button {
     background: #af362b; border-bottom-color: #932820; color: #fff; }
 .button.red:hover {
     background: #932820; border-bottom-color: #6b1a14; }
+/* Orange */
+.button.orange {
+    background: #d1712d; border-bottom-color: #a65a23; color: #fff; }
+.button.orange:hover {
+    background: #a65a23; border-bottom-color: #8b430e; }
 /* Gray */
 .button.gray {
     background: #ccc; border-bottom-color: #999; color: #444; }
