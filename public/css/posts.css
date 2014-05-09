@@ -116,6 +116,10 @@ aside.post-caption-wrapper {
         text-align: center;
     }
 
+        .subscribe p {
+            margin: 15px 0;
+        }
+
     .share {
         margin: 0 auto;
         width: 140px !important;
@@ -153,6 +157,14 @@ section.post-content h2 {
     margin: 25px 0 15px;
     color: #666;
 }
+
+section.post-content p {
+    margin: 15px 0;
+}
+
+    section.post-content p:first-child {
+        margin-top: 0;
+    }
 
 section.post-content p img {
     max-width: 670px;
