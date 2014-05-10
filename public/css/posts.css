@@ -1,6 +1,6 @@
 /*
  * Header */
- 
+
 section.post-header-wrapper {
     background: #f9f9f9;
     padding: 0 0 40px;
@@ -8,13 +8,13 @@ section.post-header-wrapper {
 
     .post-header .blog-logo {
         color: #333;
-        font-family: Signika, "Trebuchet MS", Tahoma, Verdana, 
+        font-family: Signika, "Trebuchet MS", Tahoma, Verdana,
             Arial, Helvetica, sans-serif;
         font-size: 28px;
     }
 
     .post-header .logomark {
-        position: relative; 
+        position: relative;
         top: 24px;
     }
 
@@ -105,10 +105,10 @@ aside.post-caption-wrapper {
     }
 
     .post-caption .search {
-        margin-top: 10px; 
-        width: 100px; 
-        height: 28px; 
-        top: 1px; 
+        margin-top: 10px;
+        width: 100px;
+        height: 28px;
+        top: 1px;
         position: relative;
     }
 
@@ -126,7 +126,7 @@ aside.post-caption-wrapper {
     }
 
 
-/* 
+/*
  * Posts */
 
 article {

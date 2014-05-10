@@ -226,12 +226,15 @@ aside.post-caption-wrapper.post{top:0}
 .categories{padding:12px 0 40px;text-align:center}
 .post-caption .search{margin-top:10px;width:100px;height:28px;top:1px;position:relative}
 .subscribe{text-align:center}
+.subscribe p{margin:15px 0}
 .share{margin:0 auto;width:140px!important}
 article{margin:0 auto;padding-right:250px;position:relative;width:670px}
 .title,time.post-date{color:#888}
 blockquote,section.byline{border-left:4px solid #ddd;line-height:1.7em;margin:25px 0 30px;padding:0 0 0 15px}
 section.comments{padding:25px 0 30px}
 section.post-content h2{margin:25px 0 15px;color:#666}
+section.post-content p{margin:15px 0}
+section.post-content p:first-child{margin-top:0}
 section.post-content p img{max-width:670px;border:1px solid #ccc;box-shadow:0 2px 2px -1px #ddd;border-radius:3px;padding:3px}
 .pagination a{display:inline-block;margin:0 1px}
 body.admin{padding-top:64px}
