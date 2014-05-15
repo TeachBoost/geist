@@ -198,6 +198,10 @@ class Posts extends \Base\Model
         $img = '<img src="$1" alt="" title="" />';
         $html = preg_replace( "/\[\#image:(.*?)\]/", $img, $html );
 
+        // process any popup links
+        $popup = '<a href="$2" target="_blank">$1</a>';
+        $html = preg_replace( "/\[\#popup:\((.*?)\)\((.*?)\)\]/", $popup, $html );
+
         return $html;
     }
 
