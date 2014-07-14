@@ -125,6 +125,7 @@ main.home {
     padding-top: 35px;
     position: relative;
     z-index: 2;
+    min-height: 600px
 }
 main.home section {
     position: relative;
