@@ -175,7 +175,7 @@ section.mobile-menu li:last-child{border:none}
 section.mobile-menu a{color:#fff;display:block;padding:6px 10px}
 section.mobile-menu a:hover{background:#282828;color:#fff}
 .mobile-burger{display:none}
-main.home{background:#fff;padding-bottom:30px;padding-top:35px;position:relative;z-index:2}
+main.home{background:#fff;padding-bottom:30px;padding-top:35px;position:relative;z-index:2;min-height:600px}
 main.home section{position:relative}
 nav.header-nav{float:right}
 nav.header-nav ul{margin:0}
@@ -220,11 +220,18 @@ aside.post-caption-wrapper.post{top:0}
 .green.circle{background:#2ba02b}
 .purple.circle{background:#ab51c4}
 .orange.circle{background:#d1712d}
-.bottom{padding-bottom:30px}
+.bottom{padding-bottom:25px}
 .subscribe-button{display:inline-block;margin:10px 0 30px;padding:4px 10px!important}
 .subscribe-button.home{margin-bottom:10px}
 .categories{padding:12px 0 40px;text-align:center}
 .post-caption .search{margin-top:10px;width:100px;height:28px;top:1px;position:relative}
+.testimonial{position:relative}
+main.home .testimonial{padding-top:35px}
+.testimonial strong{display:block;line-height:1.3em;text-align:center;padding:0 0 10px;width:200px}
+.testimonial a{background:url('https://i.vimeocdn.com/video/482276763_480.jpg') 0 0 no-repeat;background-size:200px 112px;display:block;height:112px;width:200px;border-radius:3px}
+.testimonial .fa{color:#fff;font-size:48px;left:82px;top:80px;position:absolute}
+main.home .testimonial .fa{top:110px}
+.testimonial a:hover .fa{color:#eee}
 .subscribe{text-align:center}
 .subscribe p{margin:15px 0}
 .share{margin:0 auto;width:140px!important}
