@@ -40,7 +40,6 @@ class Post extends \Base\Action
         $filter = $this->getService( 'filter' );
 
         // check the post ID and verify that this post exists
-        //
         if ( ! isset( $data[ 'id' ] )
             || ! valid( $data[ 'id' ], INT ) )
         {
@@ -57,10 +56,10 @@ class Post extends \Base\Action
         }
 
         // apply the data params to the post and save it
-        //
         $post->title = $filter->sanitize( get( $data, 'title' ), 'striptags' );
         $post->body = $filter->sanitize( get( $data, 'body' ), 'striptags' );
         $post->excerpt = $filter->sanitize( get( $data, 'excerpt' ), 'striptags' );
+        $post->tags = $filter->sanitize( get( $data, 'tags' ), 'striptags' );
         $post->category_id = $filter->sanitize( get( $data, 'category' ), 'striptags' );
         $post->user_id = $filter->sanitize( get( $data, 'user_id' ), 'striptags' );
         $post->post_date = date_str(
@@ -69,7 +68,6 @@ class Post extends \Base\Action
             TRUE );
 
         // set up status filter
-        //
         $filter->add(
             'status',
             function ( $value ) {
@@ -80,7 +78,6 @@ class Post extends \Base\Action
         $post->status = $filter->sanitize( get( $data, 'status' ), 'status' );
 
         // set the slug if there isn't one
-        //
         if ( ! valid( $post->slug, STRING )
             && valid( $post->title, STRING ) )
         {

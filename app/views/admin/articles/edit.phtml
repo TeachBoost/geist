@@ -22,15 +22,19 @@
                     </div>
                     <div class="margin-bottom-20">
                         <label>Excerpt/Subtitle</label>
-                        <textarea class="w95p h50px" name="excerpt"><?php echo $post->excerpt; ?></textarea>
+                        <textarea class="w95p h75px" name="excerpt"><?php echo $post->excerpt; ?></textarea>
                     </div>
-                    <div class="margin-bottom-20 clearfix">
+                    <div class="margin-bottom-20">
+                        <label>Tags (comma separated)</label>
+                        <input class="w95p" type="text" name="tags" value="<?php echo $post->tags; ?>" />
+                    </div>
+                    <div class="clearfix">
                         <div class="float-left margin-right-20 padding-right-20">
                             <label>Post Date (displays on site)</label>
                             <input class="w150px datepicker" type="text" name="post_date"
                                 value="<?php echo date_str( $post->post_date, DATE_PICKER, TRUE ); ?>" />
                         </div>
-                        <div class="float-left">
+                        <div class="float-left margin-right-20 padding-right-20">
                             <label>Author</label>
                             <select name="user_id">
 <?php   $postAuthorId = ( $postAuthor )
@@ -44,18 +48,18 @@
 <?php   endforeach; ?>
                             </select>
                         </div>
-                    </div>
-                    <div>
-                        <label>Status</label>
-                        <div class="margin-bottom-5">
-                            <input type="radio" name="status" value="draft"
-                                <?php echo ( $post->status == 'draft' ) ? ' checked="checked"' : ''; ?> />
-                            <span>Draft</span>
-                        </div>
-                        <div>
-                            <input type="radio" name="status" value="published"
-                                <?php echo ( $post->status == 'published' ) ? ' checked="checked"' : ''; ?> />
-                            <span>Published</span>
+                        <div class="float-left">
+                            <label>Status</label>
+                            <div class="margin-bottom-5">
+                                <input type="radio" name="status" value="draft"
+                                    <?php echo ( $post->status == 'draft' ) ? ' checked="checked"' : ''; ?> />
+                                <span>Draft</span>
+                            </div>
+                            <div>
+                                <input type="radio" name="status" value="published"
+                                    <?php echo ( $post->status == 'published' ) ? ' checked="checked"' : ''; ?> />
+                                <span>Published</span>
+                            </div>
                         </div>
                     </div>
                 </fieldset>

@@ -13,6 +13,7 @@ class Posts extends \Base\Model
     public $slug;
     public $excerpt;
     public $body;
+    public $tags;
     public $category_id;
     public $status;
     public $is_deleted;
