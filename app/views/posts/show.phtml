@@ -27,7 +27,8 @@
 <?php   if ( valid( $post->tags, STRING ) ):
             $tags = explode( ',', $post->tags ); ?>
 
-        <section class="tags">
+        <section class="tags fontsize-13">
+            <span>Tagged with</span>
 <?php       foreach ( $tags as $tag ):
                 $tag = trim( $tag ); ?>
             <span class="tag round-3 background-teal">
