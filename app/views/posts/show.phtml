@@ -24,6 +24,21 @@
             <span class="title"><?php echo $post->getAuthor()->bio; ?></span>
         </section>
 
+<?php   if ( valid( $post->tags, STRING ) ):
+            $tags = explode( ',', $post->tags ); ?>
+
+        <section class="tags">
+<?php       foreach ( $tags as $tag ):
+                $tag = trim( $tag ); ?>
+            <span class="tag round-3 background-teal">
+                <i class="fa fa-tag"></i>
+                <?php echo $tag; ?>
+            </span>
+<?php       endforeach; ?>
+        </section>
+
+<?php   endif; ?>
+
 <?php   $this->partial(
             'partials/posts/sideboard',
             [
