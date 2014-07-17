@@ -57,7 +57,6 @@ class Post extends \Base\Action
 
         // apply the data params to the post and save it
         $post->title = $filter->sanitize( get( $data, 'title' ), 'striptags' );
-        $post->body = $filter->sanitize( get( $data, 'body' ), 'striptags' );
         $post->excerpt = $filter->sanitize( get( $data, 'excerpt' ), 'striptags' );
         $post->tags = $filter->sanitize( get( $data, 'tags' ), 'striptags' );
         $post->category_id = $filter->sanitize( get( $data, 'category' ), 'striptags' );
@@ -66,6 +65,8 @@ class Post extends \Base\Action
             get( $data, 'post_date' ),
             DATE_DATABASE,
             TRUE );
+
+        $post->body = get( $data, 'body' );
 
         // set up status filter
         $filter->add(

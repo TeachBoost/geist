@@ -3,7 +3,7 @@
 namespace Db\Sql;
 
 use Phalcon\Mvc\Model\Query;
-use Michelf\Markdown;
+use Michelf\MarkdownExtra;
 
 class Posts extends \Base\Model
 {
@@ -154,7 +154,7 @@ class Posts extends \Base\Model
     function getHtmlBody()
     {
         // get html from markdown
-        $html = Markdown::defaultTransform( $this->body );
+        $html = MarkdownExtra::defaultTransform( $this->body );
 
         // process any icons. these take the form [#icon:name] and
         // should be replaced with font icon tags.
