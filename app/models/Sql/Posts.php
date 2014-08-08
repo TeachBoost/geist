@@ -153,8 +153,27 @@ class Posts extends \Base\Model
      */
     function getHtmlBody()
     {
+        return $this->textToHtml( $this->body );
+    }
+
+    /**
+     * Get the Markdown version of the excerpt text
+     */
+    function getHtmlExcerpt()
+    {
+        $html = $this->textToHtml( $this->excerpt );
+
+        // strip block level elements
+        return strip_tags( $html, '<a><i><span><br>' );
+    }
+
+    /**
+     * Converts markdown text to html
+     */
+    private function textToHtml( $text )
+    {
         // get html from markdown
-        $html = MarkdownExtra::defaultTransform( $this->body );
+        $html = MarkdownExtra::defaultTransform( trim( $text ) );
 
         // process any icons. these take the form [#icon:name] and
         // should be replaced with font icon tags.
