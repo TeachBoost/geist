@@ -18,7 +18,7 @@
                     </legend>
                     <div class="margin-bottom-20">
                         <label>Title</label>
-                        <input class="w95p" type="text" name="title" value="<?php echo $post->title; ?>" />
+                        <input class="w95p" type="text" name="title" value="<?php echo htmlentities( $post->title ); ?>" />
                     </div>
                     <div class="margin-bottom-20">
                         <label>Excerpt/Subtitle</label>
@@ -26,7 +26,7 @@
                     </div>
                     <div class="margin-bottom-20">
                         <label>Tags (comma separated)</label>
-                        <input class="w95p" type="text" name="tags" value="<?php echo $post->tags; ?>" />
+                        <input class="w95p" type="text" name="tags" value="<?php echo htmlentities( $post->tags ); ?>" />
                     </div>
                     <div class="clearfix">
                         <div class="float-left margin-right-20 padding-right-20">
