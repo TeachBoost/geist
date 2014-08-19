@@ -56,15 +56,20 @@ class Post extends \Base\Action
         }
 
         // apply the data params to the post and save it
-        $post->title = $filter->sanitize( get( $data, 'title' ), 'striptags' );
-        $post->excerpt = $filter->sanitize( get( $data, 'excerpt' ), 'striptags' );
+        $post->title = htmlentities( $filter->sanitize( get( $data, 'title' ), 'striptags' ) );
+        $post->excerpt = htmlentities( $filter->sanitize( get( $data, 'excerpt' ), 'striptags' ) );
         $post->tags = $filter->sanitize( get( $data, 'tags' ), 'striptags' );
         $post->category_id = $filter->sanitize( get( $data, 'category' ), 'striptags' );
         $post->user_id = $filter->sanitize( get( $data, 'user_id' ), 'striptags' );
-        $post->post_date = date_str(
-            get( $data, 'post_date' ),
-            DATE_DATABASE,
-            TRUE );
+        $post->post_date = ( strlen( get( $data, 'post_date' ) ) > 0 )
+            ? date_str(
+                get( $data, 'post_date' ),
+                DATE_DATABASE,
+                TRUE )
+            : date_str(
+                date( 'Y-m-d h:i:s' ),
+                DATE_DATABASE,
+                TRUE );
 
         $post->body = get( $data, 'body' );
 
