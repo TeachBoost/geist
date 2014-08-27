@@ -214,6 +214,24 @@ class Posts extends \Base\Model
             '&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_artwork=true' );
         $html = preg_replace( "/\[\#soundcloud:(.*?)\]/", $soundcloudEmbed, $html );
 
+        // process any storify embeds
+        $storifyEmbed = sprintf(
+            '<div class="storify">'.
+                '<iframe src="//storify.com/TeachBoost/%s/embed?header=false&amp;border=false" '.
+                    'width="%s" height=%s frameborder=no allowtransparency=true>'.
+                '</iframe>'.
+                '<script src="//storify.com/TeachBoost/%s.js?header=false&amp;border=false"></script>'.
+                '<noscript>[<a href="//storify.com/TeachBoost/%s" target="_blank">'.
+                    'View the story "#%s" on Storify</a>]</noscript>'.
+            '</div>',
+            '$1',
+            '100%',
+            '750',
+            '$1',
+            '$1',
+            '$1' );
+        $html = preg_replace( "/\[\#storify:(.*?)\]/", $storifyEmbed, $html );
+
         // process any images
         $img = '<img src="$1" alt="" title="" />';
         $html = preg_replace( "/\[\#image:(.*?)\]/", $img, $html );
