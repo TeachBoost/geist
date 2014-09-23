@@ -42,13 +42,25 @@ class Posts extends \Base\Model
             ->execute();
     }
 
+    static function getPublished( $limit = 25, $offset = 0 )
+    {
+        return \Db\Sql\Posts::query()
+            ->where( 'is_deleted = 0' )
+            ->where( 'status = "published"' )
+            ->orderBy( 'post_date desc' )
+            ->limit( $limit, $offset )
+            ->execute();
+    }
+
     /**
      * Returns the count of active posts
      */
     static function getCount()
     {
         return \Db\Sql\Posts::count([
-            'is_deleted' => 0 ]);
+            "is_deleted = ?0 and status = ?1",
+            "bind" => [ 0, 'published' ]
+        ]);
     }
 
     /**

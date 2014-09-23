@@ -17,7 +17,7 @@ class IndexController extends \Base\Controller
     public function indexAction()
     {
         // get the posts and categories
-        $this->view->posts = \Db\Sql\Posts::getActive( 10 );
+        $this->view->posts = \Db\Sql\Posts::getPublished( 10 );
         $this->view->categories = \Db\Sql\Categories::getAll();
 
         // get the total count of posts for the pagination

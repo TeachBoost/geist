@@ -34,7 +34,7 @@ class PostsController extends \Base\Controller
         // get the posts with the page offset
         $this->view->page = $number;
         $this->view->offset = $offset;
-        $this->view->posts = \Db\Sql\Posts::getActive( 10, $offset );
+        $this->view->posts = \Db\Sql\Posts::getPublished( 10, $offset );
         $this->view->postCount = $postCount;
         $this->view->totalPages = ceil( $postCount / 10 );
 
@@ -91,7 +91,7 @@ class PostsController extends \Base\Controller
             ->appendTo( $feed );
 
         // get the most recent posts
-        $posts = \Db\Sql\Posts::getActive( 20 );
+        $posts = \Db\Sql\Posts::getPublished( 20 );
 
         foreach ( $posts as $post )
         {
