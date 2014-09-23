@@ -44,7 +44,7 @@
             </header>
             <section class="post-excerpt">
                 <p>
-                    <?php echo $post->excerpt." <a href=".$post->getPath().">Read more&rarr;</a>"; ?>
+                    <?php echo $post->getHtmlExcerpt() ." <a href=".$post->getPath().">Read more&rarr;</a>"; ?>
                 </p>
             </section>
         </article>

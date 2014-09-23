@@ -65,6 +65,8 @@ class PostsController extends \Base\Controller
         // get category name and slug
         $category = \Db\Sql\Categories::getByID( $post->category_id );
 
+        $this->data->pageTitle = $post->title;
+        $this->data->metaDescription = $post->excerpt;
         $this->data->post = $post;
         $this->data->category = $category;
         $this->data->pageTitle = $post->title;

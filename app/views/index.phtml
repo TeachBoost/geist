@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>TeachBoost LaunchPad</title>
-    <meta name="description" content="" />
+    <title><?php echo ( isset( $pageTitle ) ) ? $pageTitle .' | ' : ''; ?>TeachBoost LaunchPad</title>
+    <meta name="description" content="<?php echo ( isset( $metaDescription ) ) ? htmlentities( $metaDescription ) : ''; ?>" />
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

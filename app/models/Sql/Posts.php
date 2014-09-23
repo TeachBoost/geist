@@ -3,7 +3,7 @@
 namespace Db\Sql;
 
 use Phalcon\Mvc\Model\Query;
-use Michelf\Markdown;
+use Michelf\MarkdownExtra;
 
 class Posts extends \Base\Model
 {
@@ -13,6 +13,7 @@ class Posts extends \Base\Model
     public $slug;
     public $excerpt;
     public $body;
+    public $tags;
     public $category_id;
     public $status;
     public $is_deleted;
@@ -164,8 +165,27 @@ class Posts extends \Base\Model
      */
     function getHtmlBody()
     {
+        return $this->textToHtml( $this->body );
+    }
+
+    /**
+     * Get the Markdown version of the excerpt text
+     */
+    function getHtmlExcerpt()
+    {
+        $html = $this->textToHtml( $this->excerpt );
+
+        // strip block level elements
+        return strip_tags( $html, '<a><i><span><br>' );
+    }
+
+    /**
+     * Converts markdown text to html
+     */
+    private function textToHtml( $text )
+    {
         // get html from markdown
-        $html = Markdown::defaultTransform( $this->body );
+        $html = MarkdownExtra::defaultTransform( trim( $text ) );
 
         // process any icons. these take the form [#icon:name] and
         // should be replaced with font icon tags.
@@ -205,6 +225,24 @@ class Posts extends \Base\Model
             '$1', // preg variable of cloud ID
             '&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_artwork=true' );
         $html = preg_replace( "/\[\#soundcloud:(.*?)\]/", $soundcloudEmbed, $html );
+
+        // process any storify embeds
+        $storifyEmbed = sprintf(
+            '<div class="storify">'.
+                '<iframe src="//storify.com/TeachBoost/%s/embed?header=false&amp;border=false" '.
+                    'width="%s" height=%s frameborder=no allowtransparency=true>'.
+                '</iframe>'.
+                '<script src="//storify.com/TeachBoost/%s.js?header=false&amp;border=false"></script>'.
+                '<noscript>[<a href="//storify.com/TeachBoost/%s" target="_blank">'.
+                    'View the story "#%s" on Storify</a>]</noscript>'.
+            '</div>',
+            '$1',
+            '100%',
+            '750',
+            '$1',
+            '$1',
+            '$1' );
+        $html = preg_replace( "/\[\#storify:(.*?)\]/", $storifyEmbed, $html );
 
         // process any images
         $img = '<img src="$1" alt="" title="" />';

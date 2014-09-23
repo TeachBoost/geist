@@ -7,7 +7,7 @@ use Db\Sql\Users;
 /**
  * Manages identity authentication and permissions in Phoenix
  *
-* @depends service session
+ * @depends service session
  */
 class Auth extends \Base\Service
 {
