@@ -162,6 +162,7 @@ aside.post-caption-wrapper {
         }
 
     .share {
+        height: 30px;
         margin: 0 auto;
         width: 140px !important;
     }
