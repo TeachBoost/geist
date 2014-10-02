@@ -3,7 +3,7 @@
 return array(
     'app' => array(
         'environment' => 'local',
-        'assetVersion' => 8,
+        'assetVersion' => 9,
         'errorReporting' => TRUE,
         // can be 'api' or 'view'
         'responseMode' => 'view',
