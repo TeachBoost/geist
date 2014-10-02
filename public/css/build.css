@@ -235,7 +235,7 @@ main.home .testimonial .fa{top:110px}
 .testimonial a:hover .fa{color:#eee}
 .subscribe{text-align:center}
 .subscribe p{margin:15px 0}
-.share{margin:0 auto;width:140px!important}
+.share{height:30px;margin:0 auto;width:140px!important}
 article{margin:0 auto;padding-right:250px;position:relative;width:670px}
 .title,time.post-date{color:#888}
 blockquote,section.byline{border-left:4px solid #ddd;line-height:1.7em;margin:25px 0 30px;padding:0 0 0 15px}
