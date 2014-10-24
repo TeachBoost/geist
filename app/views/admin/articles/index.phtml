@@ -42,4 +42,10 @@
 <?php   endif; ?>
         </tbody>
     </table>
+
+<?php   if ( count( $pages ) > 1 ):
+            $this->partial(
+                'partials/admin/pagination',
+                [ 'pages' => $pages ]);
+        endif; ?>
 </div>

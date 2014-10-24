@@ -1,0 +1,24 @@
+
+<div class="centered-text padding-top-30 padding-bottom-20">
+
+<?php   foreach ( $pages as $pageNumber => $value ):
+            if ( $value === \Kilte\Pagination\Pagination::TAG_CURRENT ): ?>
+
+    <a href="javascript:;" class="page button blue margin-right-5"><?php echo $pageNumber; ?></a>
+
+<?php       // ... means we can render the elipses
+            elseif ( $value === \Kilte\Pagination\Pagination::TAG_LESS
+                || $value === \Kilte\Pagination\Pagination::TAG_MORE ): ?>
+
+    <span class="color-aaa margin-right-5">&hellip;</span>
+
+<?php       // numeric means we should render that page link
+            else: ?>
+
+    <a href="<?php echo $this->url->get( 'admin/articles?page='. $pageNumber ); ?>"
+        class="page button gray margin-right-5"><?php echo $pageNumber; ?></a>
+
+<?php       endif;
+        endforeach; ?>
+
+</div>
