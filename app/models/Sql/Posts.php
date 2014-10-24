@@ -43,13 +43,25 @@ class Posts extends \Base\Model
             ->execute();
     }
 
+    static function getPublished( $limit = 25, $offset = 0 )
+    {
+        return \Db\Sql\Posts::query()
+            ->where( 'is_deleted = 0' )
+            ->where( 'status = "published"' )
+            ->orderBy( 'post_date desc' )
+            ->limit( $limit, $offset )
+            ->execute();
+    }
+
     /**
      * Returns the count of active posts
      */
     static function getCount()
     {
         return \Db\Sql\Posts::count([
-            'is_deleted' => 0 ]);
+            "is_deleted = ?0 and status = ?1",
+            "bind" => [ 0, 'published' ]
+        ]);
     }
 
     /**
@@ -213,6 +225,24 @@ class Posts extends \Base\Model
             '$1', // preg variable of cloud ID
             '&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_artwork=true' );
         $html = preg_replace( "/\[\#soundcloud:(.*?)\]/", $soundcloudEmbed, $html );
+
+        // process any storify embeds
+        $storifyEmbed = sprintf(
+            '<div class="storify">'.
+                '<iframe src="//storify.com/TeachBoost/%s/embed?header=false&amp;border=false" '.
+                    'width="%s" height=%s frameborder=no allowtransparency=true>'.
+                '</iframe>'.
+                '<script src="//storify.com/TeachBoost/%s.js?header=false&amp;border=false"></script>'.
+                '<noscript>[<a href="//storify.com/TeachBoost/%s" target="_blank">'.
+                    'View the story "#%s" on Storify</a>]</noscript>'.
+            '</div>',
+            '$1',
+            '100%',
+            '750',
+            '$1',
+            '$1',
+            '$1' );
+        $html = preg_replace( "/\[\#storify:(.*?)\]/", $storifyEmbed, $html );
 
         // process any images
         $img = '<img src="$1" alt="" title="" />';

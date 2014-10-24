@@ -162,6 +162,7 @@ aside.post-caption-wrapper {
         }
 
     .share {
+        height: 30px;
         margin: 0 auto;
         width: 140px !important;
     }
@@ -234,3 +235,12 @@ section.tags {
     section.tags .tag i {
         color: #bbb;
     }
+
+.storify {
+    border: 1px solid #ccc;
+    height: 480px;
+    max-height: 480px;
+    overflow: scroll;
+    margin: 20px 0 30px;
+    border-radius: 4px;
+}
