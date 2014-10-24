@@ -6,7 +6,8 @@
         "phalcon/incubator": "dev-master",
         "ircmaxell/password-compat": "dev-master",
         "michelf/php-markdown": "*",
-        "suin/php-rss-writer": "dev-master"
+        "suin/php-rss-writer": "dev-master",
+        "kilte/pagination": "*"
     },
     "require-dev" : {
         "phpunit/phpunit": "3.7.*"
