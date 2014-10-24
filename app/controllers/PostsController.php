@@ -100,7 +100,7 @@ class PostsController extends \Base\Controller
             $item = new Item();
             $item
                 ->title( $post->title )
-                ->description( $post->excerpt )
+                ->description( $post->getHtmlBody() )
                 ->pubDate( strtotime( $post->post_date ) )
                 ->category( $post->getCategory()->name )
                 ->url( $post->getPath() )
