@@ -46,7 +46,6 @@ abstract class Base
     public function run( $args = array() )
     {
         // initialize our required services
-        //
         $this->initConfig();
         $this->initLoader();
 
@@ -73,12 +72,10 @@ abstract class Base
     protected function initConfig()
     {
         // read in config arrays
-        //
         $defaultConfig = require( APP_PATH . '/etc/config.php' );
         $localConfig = require( APP_PATH . '/etc/config.local.php' );
 
         // instantiate them into the phalcon config
-        //
         $config = new Config( $defaultConfig );
         $config->merge( $localConfig );
 
@@ -97,14 +94,16 @@ abstract class Base
                 'Base' => APP_PATH .'/base/',
                 'Controllers' => APP_PATH .'/controllers/',
                 'Db' => APP_PATH .'/models/',
-                'Lib' => APP_PATH .'/library/',
-                'Phalcon' => VENDOR_PATH .'/phalcon/incubator/Library/Phalcon/'
+                'Lib' => APP_PATH .'/library/'
             ));
         $loader->registerClasses(
             array(
                 '__' => VENDOR_PATH .'/Underscore.php'
             ));
         $loader->register();
+
+        // autoload vendor dependencies
+        require_once VENDOR_PATH .'/autoload.php';
 
         $this->di[ 'loader' ] = $loader;
     }
@@ -157,12 +156,10 @@ abstract class Base
             'dispatcher',
             function () use ( $eventsManager ) {
                 // create the default namespace
-                //
                 $dispatcher = new Dispatcher();
                 $dispatcher->setDefaultNamespace( 'Controllers' );
 
                 // set up our error handler
-                //
                 $eventsManager->attach(
                     'dispatch:beforeException',
                     function ( $event, $dispatcher, $exception ) {
@@ -256,7 +253,6 @@ abstract class Base
             'db',
             function () use ( $config, $profiler ) {
                 // set up the database adapter
-                //
                 $adapter = new DbAdapter(
                     array(
                         'host' => $config->database->host,
@@ -271,7 +267,6 @@ abstract class Base
                     $eventsManager = new \Phalcon\Events\Manager();
 
                     // listen to all the database events
-                    //
                     $eventsManager->attach(
                         'db',
                         function ( $event, $connection ) use ( $profiler ) {
@@ -332,7 +327,6 @@ abstract class Base
             'dataCache',
             function () use ( $config ) {
                 // create a Data frontend and set a default lifetime to 1 hour
-                //
                 $frontend = new \Phalcon\Cache\Frontend\Data(
                     array(
                         'lifetime' => 3600
@@ -340,14 +334,12 @@ abstract class Base
 
                 if ( $config->session->adapter === 'redis' ):
                     // connect to redis
-                    //
                     $redis = new Redis();
                     $redis->connect(
                         $config->redis->cache->host,
                         $config->redis->cache->port );
 
                     // create the cache passing the connection
-                    //
                     return new \Phalcon\Cache\Backend\Redis(
                         $frontend,
                         array(

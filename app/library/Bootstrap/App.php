@@ -17,20 +17,16 @@ class App extends \Lib\Bootstrap\Base
         parent::run( $args );
 
         // initialize our benchmarks
-        //
         $this->di[ 'util' ]->startBenchmark();
 
         // create the mvc application
-        //
         $application = new Application( $this->di );
 
         // run auth init
-        //
         $this->di[ 'auth' ]->init();
 
         // output the content. our benchmark is finished in the base
         // controller before output is sent.
-        //
         echo $application->handle()->getContent();
     }
 
@@ -43,16 +39,16 @@ class App extends \Lib\Bootstrap\Base
                 'Base' => APP_PATH .'/base/',
                 'Controllers' => APP_PATH .'/controllers/',
                 'Db' => APP_PATH .'/models/',
-                'Lib' => APP_PATH .'/library/',
-                'Phalcon' => VENDOR_PATH .'/phalcon/incubator/Library/Phalcon/',
-                'Michelf' => VENDOR_PATH .'/michelf/php-markdown/Michelf/',
-                'Suin' => VENDOR_PATH .'/suin/php-rss-writer/Source/Suin/'
+                'Lib' => APP_PATH .'/library/'
             ));
         $loader->registerClasses(
             array(
                 '__' => VENDOR_PATH .'/Underscore.php'
             ));
         $loader->register();
+
+        // autoload vendor dependencies
+        require_once VENDOR_PATH .'/autoload.php';
 
         $this->di[ 'loader' ] = $loader;
     }

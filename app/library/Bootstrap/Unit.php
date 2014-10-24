@@ -16,7 +16,6 @@ class Unit extends \Lib\Bootstrap\Base
         parent::run( $args );
 
         // start the session
-        //
         if ( ! $this->di[ 'session' ]->isStarted() ):
             $this->di[ 'session' ]->start();
         endif;
@@ -31,8 +30,7 @@ class Unit extends \Lib\Bootstrap\Base
                 'Base' => APP_PATH .'/base/',
                 'Controllers' => APP_PATH .'/controllers/',
                 'Db' => APP_PATH .'/models/',
-                'Lib' => APP_PATH .'/library/',
-                'Phalcon' => VENDOR_PATH .'/phalcon/incubator/Library/Phalcon/'
+                'Lib' => APP_PATH .'/library/'
             ));
         $loader->registerClasses(
             array(
@@ -43,6 +41,9 @@ class Unit extends \Lib\Bootstrap\Base
                 ROOT_PATH
             ));
         $loader->register();
+
+        // autoload vendor dependencies
+        require_once VENDOR_PATH .'/autoload.php';
 
         $this->di[ 'loader' ] = $loader;
     }
