@@ -6,10 +6,12 @@
         <div class="<?php echo $categoryIcon->color; ?> circle category-icon">
             <i class="fa <?php echo $categoryIcon->class; ?>"></i>
         </div>
+<?php   if ( $category ): ?>
         <div class="more bottom">
             Read more articles from
             <a href="https://www.google.com/#q=site:blog.teachboost.com+<?php echo str_replace( " ", "+", $category->name ); ?>"><?php echo $category->name; ?></a>.
         </div>
+<?php   endif; ?>
         <div class="testimonial bottom clear">
             <strong>Hear what our <br />customers are saying!</strong>
             <a href="http://blog.teachboost.com/2014/06/introducing-the-teachboost-customer-spotlight-video">
