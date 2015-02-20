@@ -21,8 +21,9 @@ footer.site-footer .inner,footer.site-footer p{font-size:15px;line-height:1.4em}
 footer.site-footer h4{font-size:18px}
 footer.site-footer a.item{display:block;margin-bottom:1px}
 footer.site-footer .learnmore,footer.site-footer .logo{float:left;padding:0 20px 0 0;width:175px}
-footer.site-footer .solutions{float:left;padding:0 20px 0 0;width:150px}
-footer.site-footer .copyright{float:left;padding:0;width:340px}
+footer.site-footer .solutions{float:left;padding:0 20px 0 0;width:220px}
+footer.site-footer .solutions h4 a{color:#333}
+footer.site-footer .copyright{float:left;padding:0;width:270px}
 footer.site-footer .blog-logo{color:#484848;font-family:Signika,"Trebuchet MS",Tahoma,Verdana,Arial,Helvetica,sans-serif;font-size:24px;position:relative;top:1px}
 .clear{clear:both}
 .blocked{display:block}
