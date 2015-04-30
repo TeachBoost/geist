@@ -57,6 +57,7 @@ footer.site-footer .blog-logo{color:#484848;font-family:Signika,"Trebuchet MS",T
 .color-555{color:#555!important}
 .color-999{color:#999!important}
 .color-aaa{color:#aaa!important}
+.line-height-1-4{line-height:1.4em}
 .lineheight-20{line-height:20px}
 .lineheight-24{line-height:24px}
 .uppercase{text-transform:uppercase}
@@ -134,7 +135,7 @@ input:focus{border:1px solid #007db6;outline:0}
 fieldset label{display:block;margin:0 0 8px;font-size:15px;color:#777;padding:0 0 0 2px}
 fieldset input[type=password],fieldset input[type=text],fieldset textarea{padding:2px 10px;font-size:16px;background-color:#fff;border-color:#d3d3d3 #d3d3d3 #bbb;border-image:none;border-style:solid;border-width:1px;box-shadow:0 1px 3px #d3d3d3;color:#333;border-radius:2px}
 fieldset textarea{height:auto;padding:8px 10px}
-a.button,input.button{border-radius:3px;border-width:0 0 2px;border-style:solid;padding:5px 10px;cursor:pointer;text-decoration:none}
+a.button,input.button{border-radius:3px;border-width:0 0 2px;border-style:solid;padding:5px 10px;cursor:pointer;text-decoration:none;font-family:"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,"Helvetica Neue",Helvetica,Arial,sans-serif}
 .button.fontsize-18{padding:8px 14px 7px;border-radius:4px}
 .button.fontsize-16{padding:7px 12px 6px}
 .button.blue{background:#007db6;border-bottom-color:#00628f;color:#fff}
@@ -149,6 +150,8 @@ a.button,input.button{border-radius:3px;border-width:0 0 2px;border-style:solid;
 .button.gray:hover{background:#bbb;border-bottom-color:#888;color:#333}
 .button.black{background:#333;border-bottom-color:#111;color:#eee}
 .button.black:hover{background:#111;border-bottom-color:#000;color:#fff}
+.button.big{border-bottom-width:3px!important;font-size:18px!important;padding:9px 18px 8px!important}
+.button.small{border-bottom-width:2px!important;font-size:13px!important;padding:4px 10px 3px!important;-moz-border-radius:3px 3px 4px 4px;-webkit-border-radius:3px 3px 4px 4px;border-radius:3px 3px 4px 4px}
 a.hover-underline{text-decoration:none}
 a.hover-underline:hover{text-decoration:underline}
 table{width:100%}
@@ -177,23 +180,27 @@ section.mobile-menu li:last-child{border:none}
 section.mobile-menu a{color:#fff;display:block;padding:6px 10px}
 section.mobile-menu a:hover{background:#282828;color:#fff}
 .mobile-burger{display:none}
+section.top-banner{background:#eee;height:32px;padding:12px 0 0;margin-bottom:-5px;border-bottom:5px solid #ddd;color:#555}
 main.home{background:#fff;padding-bottom:30px;padding-top:35px;position:relative;z-index:2;min-height:600px}
 main.home section{position:relative}
 nav.header-nav{float:right}
 nav.header-nav ul{margin:0}
-nav .node{border-top:5px solid #f9f9f9;display:block;float:right;font-size:15px}
-nav .node.active{border-color:#383838}
-nav .node.active:hover{border-color:#111}
-nav .node.link{margin-left:15px;margin-bottom:-20px;padding-top:32px;padding-bottom:20px}
+nav .node{border-top:5px solid #ddd;display:block;float:right;font-size:15px}
+nav .node:hover{border-color:#ccc}
+nav .node.active{border-color:#bbb}
+nav .node.active:hover{border-color:#aaa}
+nav .node.link{margin-left:15px;margin-bottom:-20px;padding-top:31px;padding-bottom:20px}
 nav .node.link:hover .menu{display:block}
-nav .node.btn{line-height:19px;margin-left:17px;padding-top:33px}
+nav .node.btn{line-height:17px;margin-left:17px;padding-top:34px}
 nav .top-menu{margin:0}
-nav .menu{background:rgba(25,25,25,.9);color:#f5f5f5;display:none;padding:8px;position:absolute;margin-left:-64px!important;top:70px;z-index:100;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px}
+nav .menu{background:rgba(25,25,25,.9);color:#f5f5f5;display:none;padding:8px;position:absolute;margin-left:-64px!important;top:80px;z-index:100;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px}
 nav .menu:after{border-color:transparent transparent rgba(25,25,25,.9);border-style:solid;border-width:10px;content:'';display:block;height:0;left:74px;position:absolute;top:-20px;width:0}
-nav .menu.solutions{margin-left:-38px!important}
-nav .menu.solutions:after{left:58px}
-nav .menu .item{cursor:pointer;display:block;line-height:19px;padding:4px 6px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px}
-nav .menu .item:hover{background:rgba(255,255,255,.2);color:#fff}
+nav .menu.solutions{margin-left:-100px!important}
+nav .menu.solutions:after{left:120px;border-color:transparent transparent rgba(10,10,10,.9)}
+nav .menu .item{display:block;line-height:19px;margin-bottom:0;padding:4px 6px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px}
+nav .menu .item.span-link{cursor:pointer}
+nav .menu .item.span-link:hover{background:rgba(255,255,255,.2);color:#fff}
+nav .menu .item.span-text{background:rgba(0,0,0,.3);border-bottom:1px solid #444;left:-8px;position:relative;padding:10px 13px 6px;margin-right:-16px;top:-8px}
 nav .menu a{color:#f5f5f5;display:block}
 article.preview{margin:0 0 10px;padding:0 0 10px}
 article.preview:last-child{border:none}
@@ -203,7 +210,14 @@ article.preview .post-meta{color:#888}
 article.preview .post-title{font-size:28px;margin-bottom:8px;padding:5px 0 0}
 article.preview .post-excerpt p{font-size:16px;line-height:1.7em}
 .post-caption input:focus{border:1px solid #007db6;outline:0}
-section.post-header-wrapper{background:#f9f9f9;padding:0 0 30px}
+#flip{background:#f5f5f5;border-left:5px solid #007db6;border-top:1px solid #ddd;width:300px;padding:15px 20px;position:fixed;bottom:-300px;right:0;z-index:100;border-radius:6px 0 0;display:none}
+#flip .close{background:#007db6;color:#fff;display:block;position:absolute;top:-10px;right:5px;width:24px;height:24px;text-align:center;line-height:20px;border-radius:12px}
+#flip .input-half{float:left;width:39%;margin:0 0 15px}
+#flip .input{width:90%;margin:0 0 15px}
+#flip .message{display:block;font-size:12px;padding:10px 0 5px 2px}
+#subMessage{display:none;position:fixed;top:15px;right:15px;width:300px;background:#007db6;padding:15px 20px;color:#fff;border-radius:5px;font-size:15px;z-index:100}
+#subMessage p{line-height:1.4em!important}
+section.post-header-wrapper{background:#fff;padding:0 0 30px}
 .post-header .blog-logo{color:#333;font-family:Signika,"Trebuchet MS",Tahoma,Verdana,Arial,Helvetica,sans-serif;font-size:28px}
 .post-header .logomark{position:relative;top:24px}
 .post-header .logotext{left:4px;position:relative;top:10px}
@@ -222,6 +236,15 @@ aside.post-caption-wrapper.post{top:0}
 .green.circle{background:#2ba02b}
 .purple.circle{background:#ab51c4}
 .orange.circle{background:#d1712d}
+ul.article-list{padding:0}
+li.article{list-style:none;line-height:1.4em;margin:0 0 1px;padding:5px 0 5px 12px}
+li.article:hover{background:#f5f5f5}
+li.blue.article{border-left:3px solid #007db6}
+li.teal.article{border-left:3px solid #359fa3}
+li.red.article{border-left:3px solid #b94f3c}
+li.green.article{border-left:3px solid #2ba02b}
+li.purple.article{border-left:3px solid #ab51c4}
+li.orange.article{border-left:3px solid #d1712d}
 .bottom{padding-bottom:25px}
 .subscribe-button{display:inline-block;margin:10px 0 30px;padding:4px 10px!important}
 .subscribe-button.home{margin-bottom:10px}
@@ -716,7 +739,8 @@ h2.with-nav a{font-weight:400;text-decoration:none;margin-right:20px}
 .ui-timepicker-list li:hover .ui-timepicker-duration,li.ui-timepicker-selected .ui-timepicker-duration{color:#ccc}
 .ui-timepicker-list li.ui-timepicker-disabled,.ui-timepicker-list li.ui-timepicker-disabled:hover,.ui-timepicker-list li.ui-timepicker-selected.ui-timepicker-disabled{color:#888;cursor:default}
 .ui-timepicker-list li.ui-timepicker-disabled:hover,.ui-timepicker-list li.ui-timepicker-selected.ui-timepicker-disabled{background:#f2f2f2}
-@media only screen and (max-width :568px){header.site-head{height:40%;margin:0 0 25px;max-height:250px;min-height:200px}
+@media only screen and (max-width :568px){section.top-banner{border-bottom-width:1px;font-size:13px;height:28px}
+header.site-head{height:40%;margin:0 0 25px;max-height:250px;min-height:200px}
 header.site-head .blog-logo img{margin:15px 0 0}
 h1.blog-title{font-size:30px;margin:20px 0}
 h2.blog-description{font-size:17px;padding:12px 10px 14px;width:auto;border-radius:0;-moz-border-radius:0;-webkit-border-radius:0}
@@ -750,4 +774,5 @@ footer.site-footer .copyright,footer.site-footer .learnmore,footer.site-footer .
 footer.site-footer a.item{display:inline;margin:0 10px 0 0}
 footer.site-footer p{font-size:13px}
 .mobile-burger,.mobile-burger:hover{color:#fff;display:block;font-size:22px;padding:5px 10px 10px;position:absolute;right:0}
-.mobile-burger.post{color:#333;padding-top:14px}}
+.mobile-burger.post{color:#333;padding-top:14px}
+.hide-568{display:none}}
