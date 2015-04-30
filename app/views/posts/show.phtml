@@ -15,6 +15,15 @@
             Posted on <?php echo date( "l, F jS, Y", strtotime( $post->post_date ) ); ?>
         </time>
 
+        <div class="addthis_toolbox addthis_default_style" style="margin: 15px 0 10px;">
+            <a class="addthis_button_preferred_1"></a>
+            <a class="addthis_button_preferred_2"></a>
+            <a class="addthis_button_preferred_3"></a>
+            <a class="addthis_button_preferred_4"></a>
+            <a class="addthis_button_compact"></a>
+            <a class="addthis_counter addthis_bubble_style"></a>
+        </div>
+
         <section class="post-content padding-top-15">
             <?php echo $post->getHtmlBody(); ?>
         </section>
@@ -62,7 +71,24 @@
             <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
             <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
         </section>
-        
+
+        <script type="text/javascript">
+            var addthis_config = {
+                "data_track_addressbar": true
+            };
+            var addthis_share = {
+                url_transforms : {
+                      shorten: {
+                           twitter: "bitly"
+                      }
+                 },
+                 shorteners : {
+                      bitly : {}
+                 }
+             };
+        </script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-535a73cb4ec3e51a"></script>
+
     </article>
 
 </main>

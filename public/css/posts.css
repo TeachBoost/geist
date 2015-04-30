@@ -85,6 +85,25 @@ aside.post-caption-wrapper {
     .purple.circle { background: #ab51c4; }
     .orange.circle { background: #d1712d; }
 
+    ul.article-list {
+        padding: 0;
+    }
+    li.article {
+        list-style: none;
+        line-height: 1.4em;
+        margin: 0 0 1px;
+        padding: 5px 0 5px 12px;
+    }
+    li.article:hover {
+        background: #f5f5f5;
+    }
+    li.blue.article { border-left: 3px solid #007db6; }
+    li.teal.article { border-left: 3px solid  #359fa3; }
+    li.red.article { border-left: 3px solid #b94f3c; }
+    li.green.article { border-left: 3px solid #2ba02b; }
+    li.purple.article { border-left: 3px solid #ab51c4; }
+    li.orange.article { border-left: 3px solid #d1712d; }
+
     .bottom {
         padding-bottom: 25px;
     }

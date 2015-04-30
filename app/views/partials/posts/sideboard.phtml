@@ -1,4 +1,3 @@
-
 <?php   $categoryIcon = $post->getCategoryIcon(); ?>
 
 <aside class="post post-caption-wrapper">
@@ -12,61 +11,33 @@
             <a href="https://www.google.com/#q=site:blog.teachboost.com+<?php echo str_replace( " ", "+", $category->name ); ?>"><?php echo $category->name; ?></a>.
         </div>
 <?php   endif; ?>
-        <div class="testimonial bottom clear">
-            <strong>Hear what our <br />customers are saying!</strong>
-            <a href="http://blog.teachboost.com/2014/06/introducing-the-teachboost-customer-spotlight-video">
-                <i class="fa fa-play-circle"></i>
-            </a>
-        </div>
-        <div class="subscribe">
-            <strong>Like this post?</strong>
-            <br />
-            Get updates by email!<br />
-            <a href="javascript:;"
-               class="gray button subscribe-button"
-               id="subscribe-button">Subscribe to LaunchPad</a>
-            <form action="http://teachboost.us4.list-manage.com/subscribe/post?u=bb91eae94006986230e4e46f0&amp;id=016c3a4dba"
-                  method="post"
-                  id="mc-embedded-subscribe-form"
-                  name="mc-embedded-subscribe-form"
-                  class="validate"
-                  style="display:none; margin-bottom:25px;" novalidate>
-                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email address" style="margin: 10px 0 5px; width: 175px;" required>
-                <!-- real people should not fill this in and expect good things
-                     do not remove this or risk form bot signups -->
-                <div style="position: absolute; left: -5000px;">
-                    <input type="text" name="b_bb91eae94006986230e4e46f0_016c3a4dba" value="">
-                </div>
-                <div class="clear">
-                    <input type="submit" value="Subscribe!" name="subscribe" id="mc-embedded-subscribe" class="blue button fontsize-15" />
-                </div>
-            </form>
-        </div>
-        <div class="share addthis_toolbox addthis_default_style">
-            <a class="addthis_button_preferred_1"></a>
-            <a class="addthis_button_preferred_2"></a>
-            <a class="addthis_button_preferred_3"></a>
-            <a class="addthis_button_preferred_4"></a>
-            <a class="addthis_button_compact"></a>
-            <a class="addthis_counter addthis_bubble_style"></a>
-        </div>
-        <script type="text/javascript">
-            var addthis_config = {
-                "data_track_addressbar": true
-            };
-            var addthis_share = {
-                url_transforms : {
-                      shorten: {
-                           twitter: "bitly"
-                      }
-                 },
-                 shorteners : {
-                      bitly : {}
-                 }
-             };
-        </script>
-        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-535a73cb4ec3e51a"></script>
-        <small class="blocked centered-text">
+
+<?php   if ( is_object( $posts ) && count( $posts ) > 1 ): ?>
+
+        <h3 class="centered-text padding-top-10">Recent Posts</h3>
+        <ul class="article-list">
+
+<?php       foreach ( $posts as $post ): ?>
+<?php           if ( str_eq( $post->status, "published" ) ): ?>
+
+            <li class="article <?php echo $post->getCategoryIcon()->color; ?>">
+                <a href="<?php echo $post->getPath(); ?>">
+                    <?php echo $post->title; ?>
+                </a>
+            </li>
+
+<?php           endif; ?>
+<?php       endforeach; ?>
+
+        </ul>
+<?php   endif; ?>
+
+        <h3 class="centered-text padding-top-20">Blog Search</h3>
+        <p class="centered-text line-height-1-4">Enter a tag, author, or topic here to search:</p>
+        <input type="text" class="search" id="search-query" />
+        <a class="blue button" href="javascript:;" id="search-submit">Search</a>
+
+        <small class="blocked centered-text padding-top-20">
             <a href="https://teachboost.com">Back to TeachBoost</a>
         </small>
     </div>
