@@ -266,7 +266,7 @@ class Auth extends \Base\Action
      * @param integer $max
      * @return long
      */
-    public function cryptoRandSecure( $min, $max ) 
+    public function cryptoRandSecure( $min, $max )
     {
         $range = $max - $min;
 
@@ -279,14 +279,14 @@ class Auth extends \Base\Action
         $bytes = (int) ( $log / 8 ) + 1; // length in bytes
         $bits = (int) $log + 1; // length in bits
         $filter = (int) ( 1 << $bits ) - 1; // set all lower bits to 1
-        
-        do 
+
+        do
         {
             $rnd = hexdec( bin2hex( openssl_random_pseudo_bytes( $bytes ) ) );
             $rnd = $rnd & $filter; // discard irrelevant bits
-        } 
+        }
         while ( $rnd >= $range );
-        
+
         return $min + $rnd;
     }
 }

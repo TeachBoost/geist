@@ -4,7 +4,10 @@ a.button,
 input.button {
     border-radius: 3px; border-top-width: 0; border-left-width: 0;
     border-right-width: 0; border-bottom-width: 2px; border-style: solid;
-    padding: 5px 10px; cursor: pointer; text-decoration: none; }
+    padding: 5px 10px; cursor: pointer;
+    text-decoration: none;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans",
+        Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;    }
 .button.fontsize-18 {
     padding: 8px 14px 7px 14px; border-radius: 4px; }
 .button.fontsize-16 {
@@ -40,6 +43,22 @@ input.button {
     background: #333; border-bottom-color: #111; color: #eee; }
 .button.black:hover {
     background: #111; border-bottom-color: #000; color: #fff; }
+
+/* Sizes
+ */
+ .button.big {
+     border-bottom-width: 3px !important;
+     font-size: 18px !important;
+     padding: 9px 18px 8px !important;
+ }
+.button.small {
+    border-bottom-width: 2px !important;
+    font-size: 13px !important;
+    padding: 4px 10px 3px !important;
+    -moz-border-radius: 3px 3px 4px 4px;
+    -webkit-border-radius: 3px 3px 4px 4px;
+    border-radius: 3px 3px 4px 4px;
+}
 
 /* Links
  */

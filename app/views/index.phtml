@@ -49,11 +49,11 @@
             e.parentNode.insertBefore(n, e);
         })(document,"script","hs-analytics",300000);
     </script>
-<!-- End of Async HubSpot Analytics Code -->
 
 <?php   else: ?>
 
     <script src="<?php echo $this->url->get( 'js/vendor/jquery.js' ); ?>"></script>
+    <script src="<?php echo $this->url->get( 'js/vendor/cookies.min.js' ); ?>"></script>
     <script type="text/javascript" src="<?php echo $this->url->get( 'js/main.js' ); ?>"></script>
 
 <?php   endif; ?>

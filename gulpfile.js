@@ -43,7 +43,8 @@ gulp.task( 'build-js', function () {
         './public/js/vendor/pikaday.js',
         './public/js/vendor/jquery.pikaday.js',
         './public/js/vendor/underscore.js',
-        './public/js/vendor/markdown.js'
+        './public/js/vendor/markdown.js',
+        './public/js/vendor/cookies.min.js'
     ];
 
     gulp.src( jsFiles )

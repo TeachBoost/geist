@@ -10,7 +10,7 @@ return array(
         'hostname' => 'lorien.local/' ),
 
     'cookies' => array(
-        'secure' => TRUE ),
+        'secure' => FALSE ),
 
     'database' => array(
         'password' => '' ),

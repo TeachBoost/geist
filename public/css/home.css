@@ -117,6 +117,18 @@ section.mobile-menu {
 
 
 /*
+ * Sales Banner */
+
+section.top-banner {
+    background: #eee;
+    height: 32px;
+    padding:12px 0 0;
+    margin-bottom: -5px;
+    border-bottom: 5px solid #ddd;
+    color: #555;
+}
+
+/*
  * Main */
 
 main.home {
@@ -141,30 +153,33 @@ nav.header-nav ul {
     margin: 0;
 }
 nav .node {
-    border-top: 5px solid #f9f9f9;
+    border-top: 5px solid #ddd;
     display: block;
     float: right;
     font-size: 15px;
 }
+nav .node:hover {
+    border-color: #ccc;
+}
 nav .node.active {
-    border-color: #383838;
+    border-color: #bbb;
 }
 nav .node.active:hover {
-    border-color: #111;
+    border-color: #aaa;
 }
 nav .node.link {
     margin-left: 15px;
     margin-bottom: -20px;
-    padding-top: 32px;
+    padding-top: 31px;
     padding-bottom: 20px;
 }
 nav .node.link:hover .menu {
     display: block;
 }
 nav .node.btn {
-    line-height: 19px;
+    line-height: 17px;
     margin-left: 17px;
-    padding-top: 33px;
+    padding-top: 34px;
 }
 nav .top-menu {
     margin: 0;
@@ -176,7 +191,7 @@ nav .menu {
     padding: 8px;
     position: absolute;
     margin-left: -64px !important;
-    top: 70px;
+    top: 80px;
     z-index: 100;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
@@ -195,23 +210,36 @@ nav .menu:after {
     width: 0;
 }
 nav .menu.solutions {
-    margin-left: -38px !important;
+    margin-left: -100px !important;
 }
 nav .menu.solutions:after {
-    left: 58px;
+    left: 120px;
+    border-color: transparent transparent rgba(10, 10, 10, 0.9) transparent;
 }
 nav .menu .item {
-    cursor: pointer;
     display: block;
     line-height: 19px;
+    margin-bottom: 0;
     padding: 4px 6px;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     border-radius: 2px;
 }
-nav .menu .item:hover {
+nav .menu .item.span-link {
+    cursor: pointer;
+}
+nav .menu .item.span-link:hover {
     background: rgba(255, 255, 255, 0.2);
     color: #fff;
+}
+nav .menu .item.span-text {
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid #444;
+    left: -8px;
+    position: relative;
+    padding: 10px 13px 6px;
+    margin-right: -16px;
+    top: -8px;
 }
 nav .menu a {
     color: #f5f5f5;
@@ -262,4 +290,71 @@ article.preview {
 .post-caption input:focus {
     border: 1px solid #007db6;
     outline: none;
+}
+
+
+/*
+ * Flip subscribe */
+
+#flip {
+    background: #f5f5f5;
+    border-left: 5px solid #007db6;
+    border-top: 1px solid #ddd;
+    width: 300px;
+    padding: 15px 20px;
+    position: fixed;
+    bottom: -300px;
+    right: 0;
+    z-index: 100;
+    border-radius: 6px 0 0 0;
+    display: none;
+}
+
+#flip .close {
+    background: #007db6;
+    color: #fff;
+    display: block;
+    position: absolute;
+    top: -10px;
+    right: 5px;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 12px;
+}
+
+#flip .input-half {
+    float: left;
+    width: 39%;
+    margin: 0 0 15px;
+}
+
+#flip .input {
+    width: 90%;
+    margin: 0 0 15px;
+}
+
+#flip .message {
+    display: block;
+    font-size: 12px;
+    padding: 10px 0 5px 2px;
+}
+
+#subMessage {
+    display: none;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 300px;
+    background: #007db6;
+    padding: 15px 20px;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 15px;
+    z-index: 100;
+}
+
+#subMessage p {
+    line-height: 1.4em !important;
 }

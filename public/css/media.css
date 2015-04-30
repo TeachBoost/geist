@@ -3,6 +3,13 @@
 
 @media only screen and (max-width : 568px) {
 
+    /* Top Banner */
+    section.top-banner {
+        border-bottom-width: 1px;
+        font-size: 13px;
+        height: 28px;
+    }
+
     /* Main Header */
 
     header.site-head {
@@ -149,5 +156,7 @@
         color: #333;
         padding-top: 14px;
     }
+
+    .hide-568 { display: none; }
 
 }

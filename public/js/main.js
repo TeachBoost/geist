@@ -60,7 +60,44 @@ var MainPage = {
             if ( width < 600 ) return;
             $bgImage.css( 'top', -1 * scrollTop * 0.2 );
         });
+    },
+
+    // Flip box on scroll
+    flipUp: function() {
+
+        // close the message and set the cookie if clicked
+        $( '#flip' ).on( 'click', '.close', function() {
+            $( '#flip' ).hide();
+            Cookies.set( 'flipHide', 'true', { expires: 60*60*24*7 } );
+        });
+
+        // check if the user already hid this message
+        var flipHide = Cookies.get( 'flipHide' );
+        if ( flipHide != 'true' ) {
+            var height = $( document ).height(),
+                half = height/3,
+                $window = $( window );
+            $window.on( 'scroll', function() {
+                var position = $window.scrollTop();
+                if ( position > half ) {
+                    $( '#flip' ).show().animate({ bottom: 0 }, 500 );
+                } else {
+                    $( '#flip' ).hide().css( 'bottom', '-320px' );
+                }
+            });
+        }
+    },
+
+    // Check for blog subscriptions
+    checkSubscriptions: function() {
+
+        var sub = getUrlParameter( 'submissionGuid' );
+        if ( sub.length > 0 ) {
+            $( '#subMessage' ).show().delay( 5000 ).fadeOut();
+        }
+
     }
+
 };
 
 // call our page functions
@@ -69,5 +106,23 @@ MainPage.subscribeButton();
 MainPage.search();
 MainPage.mobileMenu();
 MainPage.parallax();
+MainPage.flipUp();
+MainPage.checkSubscriptions();
+
+// utility functions
+//
+function getUrlParameter(sParam)
+{
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++)
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam)
+        {
+            return sParameterName[1];
+        }
+    }
+}
 
 });
